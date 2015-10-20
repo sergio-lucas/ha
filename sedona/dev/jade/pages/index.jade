@@ -1,0 +1,26 @@
+extends ../layouts/one_column
+
+block head
+	- pageTitle = 'Sedona main page';
+	- pageDescription = 'Sedona main page description';
+	- pageKeywords = 'Sedona, html-slicing, psd, template, html academy';
+
+//- block scripts
+//- 	+script(['js/main.js'])
+
+//- content
+block content
+		main.main
+			+b.intro
+				+e.welcome Welcome
+					+e('span').welcome-small — to the gorgeouse —
+				+e.site-name Sedona
+				+e.slogan "Because the Grand Canyon sucks!"
+			article
+				h1 Седона — небольшой городок в Аризоне, заслуживающий большего!
+				p Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон!
+				+b.feature-block
+					+e.small
+						+e.title Настоящий <br> городок
+						+e.number — №1 —
+						p Седона не атракцион для туристов, там течёт своя жизнь
