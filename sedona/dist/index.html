@@ -13,42 +13,147 @@
   <body>
     <div class="container">
       <header class="main-header">
-        <nav class="main-header__navigation">
+        <nav class="nav">
           <ul>
-            <li class="main-header__active"><a href="#">Информация</a>
+            <li class="nav__item nav__item--active"><a href="#">Информация</a>
             </li>
-            <li><a href="#">Фото и видео</a></li>
-            <li><a href="#">LOGO??</a></li>
-            <li><a href="#">Карта штата</a></li>
-            <li><a href="#">Гостиницы</a></li>
+            <li class="nav__item"><a href="#">Фото и видео</a>
+            </li>
+            <li class="nav__item"><a href="#">LOGO??</a>
+            </li>
+            <li class="nav__item"><a href="#">Карта штата</a>
+            </li>
+            <li class="nav__item"><a href="#">Гостиницы</a>
+            </li>
           </ul>
         </nav>
       </header>
       <main class="main">
         <div class="intro">
-          <div class="intro__welcome">Welcome<span class="intro__welcome-small">— to the gorgeouse —</span>
+          <div class="intro__welcome"><img src="http://placehold.it/250x100" title="Welcome to the gorgeouse" class="intro__img" alt="Welcome to the gorgeouse"/>
           </div>
-          <div class="intro__site-name">Sedona
-          </div>
-          <div class="intro__slogan">"Because the Grand Canyon sucks!"
+          <h1 class="intro__site-name">Sedona
+          </h1>
+          <div class="intro__slogan"><img src="http://placehold.it/335x90" title="Because the Grand Canyon sucks!" class="intro__img" alt="Because the Grand Canyon sucks!"/>
           </div>
         </div>
         <article>
-          <h1>Седона — небольшой городок в Аризоне, заслуживающий большего!</h1>
-          <p>Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон!</p>
-          <div class="feature-block">
-            <div class="feature-block__small">
-              <div class="feature-block__title">Настоящий <br> городок
+          <h1 class="main__title">Седона — небольшой городок в Аризоне, заслуживающий большего!
+          </h1>
+          <p class="main__descr">Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон!
+          </p>
+          <section class="features">
+            <div class="feature-block feature-block--bg-feature1">
+              <div class="feature-block__item feature-block__item--bg-blue">
+                <h2 class="feature-block__title">Настоящий <br> городок
+                </h2>
+                <div class="feature-block__number">— №1 —
+                </div>
+                <p class="feature-block__descr">Седона не атракцион для туристов, там течёт своя жизнь
+                </p>
               </div>
-              <div class="feature-block__number">— №1 —
-              </div>
-              <p>Седона не атракцион для туристов, там течёт своя жизнь</p>
             </div>
-          </div>
+            <div class="feature-list">
+              <div class="feature-list__item"><i class="feature-list__ico"></i>
+                <h2 class="feature-list__title">Жильё
+                </h2>
+                <p class="feature-list__descr">Рекомендуем пожить в настоящем мотеле, все как в кино!
+                </p>
+              </div>
+              <div class="feature-list__item"><i class="feature-list__ico"></i>
+                <h2 class="feature-list__title">Еда
+                </h2>
+                <p class="feature-list__descr">Всегда заказывай фирменный бургер, Вы не разочаруетесь!
+                </p>
+              </div>
+              <div class="feature-list__item"><i class="feature-list__ico"></i>
+                <h2 class="feature-list__title">Сувениры
+                </h2>
+                <p class="feature-list__descr">Не только китайского, но и местного производства!
+                </p>
+              </div>
+            </div>
+            <div class="feature-block feature-block--bg-feature2">
+              <div class="feature-block__item feature-block__item--bg-blue feature-block__item--right">
+                <h2 class="feature-block__title">Там есть <br> мост дьявола
+                </h2>
+                <div class="feature-block__number">— №2 —
+                </div>
+                <p class="feature-block__descr">Да, по нему можно пройти! Если конечно вы осмелитесь
+                </p>
+              </div>
+            </div>
+            <div class="feature-list">
+              <div class="feature-list__item">
+                <h2 class="feature-list__title">Небольшая площадь
+                </h2>
+                <div class="feature-list__number">— №3 —
+                </div>
+                <p class="feature-list__descr">Все достопримечательности находятся очень близко
+                </p>
+              </div>
+              <div class="feature-list__item">
+                <h2 class="feature-list__title">Красивая дорога
+                </h2>
+                <div class="feature-list__number">— №4 —
+                </div>
+                <p class="feature-list__descr">Ехать в Седону из Лас-Вегаса совсем не скучно!
+                </p>
+              </div>
+              <div class="feature-list__item">
+                <h2 class="feature-list__title">Мало туристов
+                </h2>
+                <div class="feature-list__number">— №5 —
+                </div>
+                <p class="feature-list__descr">Большинство едет в гранд каньон и толпится там
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="index-search">
+            <h2 class="index-search__title">Заинтересовались?
+            </h2>
+            <p class="index-search__descr">Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне
+            </p>
+            <form action="/" method="post" class="search-form">
+              <div class="search-form__title">Поиск гостиниц в Седоне
+              </div>
+              <div class="search-form__inner">
+                <label for="dtarrival">Дата заезда:</label>
+                <input id="dtarrival" type="date" placeholder="24 Апреля 2014" class="date-arrival">
+                <label for="dtdep">Дата выезда:</label>
+                <input id="dtdep" type="date" placeholder="24 Июля 2014" class="date-dep">
+                <div class="search-form__age">
+                  <label for="adult">Взрослые:</label>
+                  <input id="adult" type="text" placeholder="2" class="adult">
+                  <label for="child">Дети:</label>
+                  <input id="child" type="text" placeholder="0" class="child">
+                </div>
+                <input type="submit" value="Найти" class="search-form__search"/>
+              </div>
+            </form>
+          </section>
         </article>
       </main>
-      <footer class="footer">
-        <div class="footer__inner">Footer</div>
+      <footer class="main-footer">
+        <div class="footer"><a href="#" class="footer__logo">#visitsedona</a>
+          <ul class="social-block">
+            <li class="social-block__btn social-block__btn--tw"><a href="#">Twitter</a>
+            </li>
+            <li class="social-block__btn social-block__btn--fb"><a href="#">Facebook</a>
+            </li>
+            <li class="social-block__btn social-block__btn--yt"><a href="#">Youtube</a>
+            </li>
+          </ul>
+          <div class="copyright-block">
+            <div class="copyright-block__create-by">
+              <div class="create-text">Website by</div><a href="#" class="copyright-block__create_link">siteName</a>
+            </div>
+            <div class="copyright-block__create-for">
+              <div class="create-text">for</div><a href="#" class="copyright-block__create_link">siteName</a>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   </body>

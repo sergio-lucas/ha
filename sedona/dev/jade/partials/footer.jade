@@ -1,3 +1,17 @@
-footer.footer
-	.footer__inner
-		|Footer
+footer.main-footer
+  +b.footer
+    +e('a')(href='#').logo #visitsedona
+    +b('ul').social-block
+      +e('li').btn--tw
+        a(href='#') Twitter
+      +e('li').btn--fb
+        a(href='#') Facebook
+      +e('li').btn--yt
+        a(href='#') Youtube
+    +b.copyright-block
+      +e.create-by
+        .create-text Website by
+        +e('a')(href="#").create_link siteName
+      +e.create-for
+        .create-text for
+        +e('a')(href="#").create_link siteName

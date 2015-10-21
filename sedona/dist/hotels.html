@@ -13,28 +13,182 @@
   <body>
     <div class="container">
       <header class="main-header">
-        <nav class="main-header__navigation">
+        <nav class="nav">
           <ul>
-            <li class="main-header__active"><a href="#">Информация</a>
+            <li class="nav__item nav__item--active"><a href="#">Информация</a>
             </li>
-            <li><a href="#">Фото и видео</a></li>
-            <li><a href="#">LOGO??</a></li>
-            <li><a href="#">Карта штата</a></li>
-            <li><a href="#">Гостиницы</a></li>
+            <li class="nav__item"><a href="#">Фото и видео</a>
+            </li>
+            <li class="nav__item"><a href="#">LOGO??</a>
+            </li>
+            <li class="nav__item"><a href="#">Карта штата</a>
+            </li>
+            <li class="nav__item"><a href="#">Гостиницы</a>
+            </li>
           </ul>
         </nav>
       </header>
-      <section class="underHeader">
-        <div class="container textCenter">
-          <h1 class="header_text">
-            Share your
-            holiday dreams
-          </h1>
-          <p>And find the perfect partner to fullfill it</p>
+      <main class="main">
+        <div class="hotel-filter">
+          <form method="post" action="/" class="hotel-filter__parameters">
+            <ul class="options-block">
+              <li>
+                <h2 class="options-block__title">Инфраструктура:
+                </h2>
+              </li>
+              <li>
+                <input type="checkbox" id="pool" name="pool" checked>
+                <label for="pool">Бассейн</label>
+              </li>
+              <li>
+                <input type="checkbox" id="parking" name="parking" checked>
+                <label for="parking">Парковка</label>
+              </li>
+              <li>
+                <input type="checkbox" id="wifi" name="wifi" checked>
+                <label for="wifi">Wi-Fi</label>
+              </li>
+            </ul>
+            <ul class="options-block">
+              <li>
+                <h2 class="options-block__title">Тип жилья:
+                </h2>
+              </li>
+              <li>
+                <input type="checkbox" id="hotel" name="hotel" checked>
+                <label for="hotel">Гостиница</label>
+              </li>
+              <li>
+                <input type="checkbox" id="motel" name="motel" checked>
+                <label for="motel">Мотель</label>
+              </li>
+              <li>
+                <input type="checkbox" id="apart" name="apart" checked>
+                <label for="apart">Апартаменты</label>
+              </li>
+            </ul>
+            <div class="price-night">
+              <h2 class="price-night__title">Стоимость в сутки (р):
+              </h2>
+              <div class="price-night__from-to">
+                <div class="price-night__start">от<span id="start-value">0</span>
+                </div>
+                <div class="price-night__end">до<span id="end-value">3000</span>
+                </div>
+              </div>
+              <div class="price-night__range">
+                <div class="price-night__range-bar">
+                </div><a class="price-night__range-slide price-night__range-slide--start">--start</a><a class="price-night__range-slide price-night__range-slide--end">--end</a>
+              </div>
+            </div>
+          </form>
+          <div class="middle-filter">
+            <div class="middle-filter__found">Найдено:<span id="total-count">3</span>
+            </div>
+            <ul class="sort-filter">
+              <li class="sort-filter__item">Сортировка:
+              </li>
+              <li class="sort-filter__item sort-filter__item--active"><a href="#">по цене</a>
+              </li>
+              <li class="sort-filter__item"><a href="#">по типу</a>
+              </li>
+              <li class="sort-filter__item"><a href="#">по рейтингу</a>
+              </li>
+            </ul>
+            <ul class="middle-filter__order">
+              <li><a href="#">desc</a></li>
+              <li><a href="#">asc</a></li>
+            </ul>
+          </div>
+          <div class="filter-output">
+            <div class="hotel-item">
+              <div class="hotel-item__img"><img src="http://placehold.it/135x90" alt="hotelName">
+              </div>
+              <div class="hotel-item__descr"><a href="#" class="hotel-item__title">Amara Resort & Spa</a>
+                <div class="hotel-item__type">Гостиница
+                </div>
+                <div class="hotel-item__price">от 3500 р.
+                </div>
+                <ul class="hotel-item__btn-block">
+                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-blue">Подробнее</a>
+                  </li>
+                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-broun">Забронировать</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="hotel-item__rating">
+                <div class="hotel-item__rating-stars hotel-item__rating-stars--four">
+                </div>
+                <div class="hotel-item__mark">Рейтинг:<span id="mark-val">8,5</span>
+                </div>
+              </div>
+            </div>
+            <div class="hotel-item">
+              <div class="hotel-item__img"><img src="http://placehold.it/135x90" alt="hotelName">
+              </div>
+              <div class="hotel-item__descr"><a href="#" class="hotel-item__title">Desert Quail Inn</a>
+                <div class="hotel-item__type">Мотель
+                </div>
+                <div class="hotel-item__price">от 2000 р.
+                </div>
+                <ul class="hotel-item__btn-block">
+                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-blue">Подробнее</a>
+                  </li>
+                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-broun">Забронировать</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="hotel-item__rating">
+                <div class="hotel-item__rating-stars hotel-item__rating-stars--two">
+                </div>
+                <div class="hotel-item__mark">Рейтинг:<span id="mark-val">8,9</span>
+                </div>
+              </div>
+            </div>
+            <div class="hotel-item">
+              <div class="hotel-item__img"><img src="http://placehold.it/135x90" alt="hotelName">
+              </div>
+              <div class="hotel-item__descr"><a href="#" class="hotel-item__title">Villas at Poco Diablo</a>
+                <div class="hotel-item__type">Апартаменты
+                </div>
+                <div class="hotel-item__price">от 4000 р.
+                </div>
+                <ul class="hotel-item__btn-block">
+                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-blue">Подробнее</a>
+                  </li>
+                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-broun">Забронировать</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="hotel-item__rating">
+                <div class="hotel-item__rating-stars hotel-item__rating-stars--three">
+                </div>
+                <div class="hotel-item__mark">Рейтинг:<span id="mark-val">9,2</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
-      <footer class="footer">
-        <div class="footer__inner">Footer</div>
+      </main>
+      <footer class="main-footer">
+        <div class="footer"><a href="#" class="footer__logo">#visitsedona</a>
+          <ul class="social-block">
+            <li class="social-block__btn social-block__btn--tw"><a href="#">Twitter</a>
+            </li>
+            <li class="social-block__btn social-block__btn--fb"><a href="#">Facebook</a>
+            </li>
+            <li class="social-block__btn social-block__btn--yt"><a href="#">Youtube</a>
+            </li>
+          </ul>
+          <div class="copyright-block">
+            <div class="copyright-block__create-by">
+              <div class="create-text">Website by</div><a href="#" class="copyright-block__create_link">siteName</a>
+            </div>
+            <div class="copyright-block__create-for">
+              <div class="create-text">for</div><a href="#" class="copyright-block__create_link">siteName</a>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   </body>
