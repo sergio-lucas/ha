@@ -13,13 +13,14 @@ block content
     +b('main').main
       +b.intro
         +e.welcome
-          +e('img')(src="http://placehold.it/250x100" title=alt="Welcome to the gorgeouse").img
+          |Welcome to the gorgeouse
         +e('h1').site-name Sedona
         +e.slogan
-          +e('img')(src="http://placehold.it/335x90" title=alt="Because the Grand Canyon sucks!").img
+          |Because the Grand Canyon sucks!"
       article
-        +e('h1').title Седона — небольшой городок в Аризоне, заслуживающий большего!
-        +e('p').descr Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон!
+        +b.promo
+          +e('h1').title Седона — небольшой городок в Аризоне, заслуживающий большего!
+          +e('p').descr Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон!
         +b('section').features
           +b.feature-block--bg-feature1
             +e.item--bg-blue
@@ -28,15 +29,15 @@ block content
               +e('p').descr Седона не атракцион для туристов, там течёт своя жизнь
           +b.feature-list
             +e.item
-              +e('i').ico
+              +e('span').ico
               +e('h2').title Жильё
               +e('p').descr Рекомендуем пожить в настоящем мотеле, все как в кино!
             +e.item
-              +e('i').ico
+              +e('span').ico
               +e('h2').title Еда
               +e('p').descr Всегда заказывай фирменный бургер, Вы не разочаруетесь!
             +e.item
-              +e('i').ico
+              +e('span').ico
               +e('h2').title Сувениры
               +e('p').descr Не только китайского, но и местного производства!
           +b.feature-block--bg-feature2
@@ -69,7 +70,13 @@ block content
               input(class="date-dep" id="dtdep" type="date" placeholder="24 Июля 2014")
               +e.age
                 label(for="adult") Взрослые:
-                input(class="adult" id="adult" type="text" placeholder="2")
+                +b.input-number
+                  +e('span').btn--minus
+                  +e('input')(id="adult" type="text" placeholder="2").value
+                  +e('span').btn--plus
                 label(for="child") Дети:
-                input(class="child" id="child" type="text" placeholder="0")
+                +b.input-number
+                  +e('span').btn--minus
+                  input(class="child" id="child" type="text" placeholder="0")
+                  +e('span').btn--plus
               +e('input')(type="submit" value="Найти").search

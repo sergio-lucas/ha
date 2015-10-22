@@ -14,8 +14,8 @@
     <div class="container">
       <header class="main-header">
         <nav class="nav">
-          <ul>
-            <li class="nav__item nav__item--active"><a href="#">Информация</a>
+          <ul class="nav__list">
+            <li class="nav__link nav__link--active"><a href="#">Информация</a>
             </li>
             <li class="nav__item"><a href="#">Фото и видео</a>
             </li>
@@ -30,18 +30,20 @@
       </header>
       <main class="main">
         <div class="intro">
-          <div class="intro__welcome"><img src="http://placehold.it/250x100" title="Welcome to the gorgeouse" class="intro__img" alt="Welcome to the gorgeouse"/>
+          <div class="intro__welcome">Welcome to the gorgeouse
           </div>
           <h1 class="intro__site-name">Sedona
           </h1>
-          <div class="intro__slogan"><img src="http://placehold.it/335x90" title="Because the Grand Canyon sucks!" class="intro__img" alt="Because the Grand Canyon sucks!"/>
+          <div class="intro__slogan">Because the Grand Canyon sucks!"
           </div>
         </div>
         <article>
-          <h1 class="main__title">Седона — небольшой городок в Аризоне, заслуживающий большего!
-          </h1>
-          <p class="main__descr">Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон!
-          </p>
+          <div class="promo">
+            <h1 class="promo__title">Седона — небольшой городок в Аризоне, заслуживающий большего!
+            </h1>
+            <p class="promo__descr">Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон!
+            </p>
+          </div>
           <section class="features">
             <div class="feature-block feature-block--bg-feature1">
               <div class="feature-block__item feature-block__item--bg-blue">
@@ -54,19 +56,19 @@
               </div>
             </div>
             <div class="feature-list">
-              <div class="feature-list__item"><i class="feature-list__ico"></i>
+              <div class="feature-list__item"><span class="feature-list__ico"></span>
                 <h2 class="feature-list__title">Жильё
                 </h2>
                 <p class="feature-list__descr">Рекомендуем пожить в настоящем мотеле, все как в кино!
                 </p>
               </div>
-              <div class="feature-list__item"><i class="feature-list__ico"></i>
+              <div class="feature-list__item"><span class="feature-list__ico"></span>
                 <h2 class="feature-list__title">Еда
                 </h2>
                 <p class="feature-list__descr">Всегда заказывай фирменный бургер, Вы не разочаруетесь!
                 </p>
               </div>
-              <div class="feature-list__item"><i class="feature-list__ico"></i>
+              <div class="feature-list__item"><span class="feature-list__ico"></span>
                 <h2 class="feature-list__title">Сувениры
                 </h2>
                 <p class="feature-list__descr">Не только китайского, но и местного производства!
@@ -125,9 +127,13 @@
                 <input id="dtdep" type="date" placeholder="24 Июля 2014" class="date-dep">
                 <div class="search-form__age">
                   <label for="adult">Взрослые:</label>
-                  <input id="adult" type="text" placeholder="2" class="adult">
+                  <div class="input-number"><span class="input-number__btn input-number__btn--minus"></span>
+                    <input id="adult" type="text" placeholder="2" class="input-number__value"/><span class="input-number__btn input-number__btn--plus"></span>
+                  </div>
                   <label for="child">Дети:</label>
-                  <input id="child" type="text" placeholder="0" class="child">
+                  <div class="input-number"><span class="input-number__btn input-number__btn--minus"></span>
+                    <input id="child" type="text" placeholder="0" class="child"><span class="input-number__btn input-number__btn--plus"></span>
+                  </div>
                 </div>
                 <input type="submit" value="Найти" class="search-form__search"/>
               </div>
@@ -138,11 +144,11 @@
       <footer class="main-footer">
         <div class="footer"><a href="#" class="footer__logo">#visitsedona</a>
           <ul class="social-block">
-            <li class="social-block__btn social-block__btn--tw"><a href="#">Twitter</a>
+            <li class="social-block__item"><a href="#" class="social-block__btn social-block__btn--tw">Twitter</a>
             </li>
-            <li class="social-block__btn social-block__btn--fb"><a href="#">Facebook</a>
+            <li class="social-block__item"><a href="#" class="social-block__btn social-block__btn--fb">Facebook</a>
             </li>
-            <li class="social-block__btn social-block__btn--yt"><a href="#">Youtube</a>
+            <li class="social-block__item"><a href="#" class="social-block__btn social-block__btn--yt">Youtube</a>
             </li>
           </ul>
           <div class="copyright-block">
