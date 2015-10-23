@@ -37,13 +37,13 @@ gulp.task('jade', function() {
 });
 
 gulp.task('copyimages', function() {
-   gulp.src('dev/images/*.*')
-   .pipe(gulp.dest('dist/images/'));
+   gulp.src('dev/img/*.*')
+   .pipe(gulp.dest('dist/img/'));
 });
 
 
 gulp.task('watch', ['stylus', 'browserSync', 'jade'], function (){
   gulp.watch('dev/styl/main.styl', ['stylus']);
   gulp.watch('dev/jade/pages/**/*.jade', ['jade']);
-  gulp.watch('dev/images/*.*', ['copyimages']);
+  gulp.watch('dev/img/*.*', ['copyimages']);
 });
