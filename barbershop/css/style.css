@@ -1,10 +1,97 @@
 body {
-	font: normal 14px/1.5 'PTSans' Arial, Helvetica, sans-serif;
-	color: #000;
+    font: normal 14px/1.5 'PTSans' Arial, Helvetica, sans-serif;
+    color: #000;
 }
 h1 {
-	font: bold 30px/normal 'Myriad Pro', Arial, Helvetica, sans-serif;
+    font: bold 30px/normal 'Myriad Pro', Arial, Helvetica, sans-serif;
 }
 h2 {
-	font: bold 24px/normal 'Myriad Pro', Arial, Helvetica, sans-serif;
+    font: bold 24px/normal 'Myriad Pro', Arial, Helvetica, sans-serif;
+}
+/*
+ * Layout
+ */
+
+/*clearing floated elements*/
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.container {
+  width: 960px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+  /*
+  * Header block
+  */
+.main-navigation {
+  float: left;
+  width: 800px;
+}
+  .main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .main-navigation li {
+    float: left;
+  }
+.user-block {
+  float: right;
+  width: 100px;
+}
+.side-bar {
+  float: left;
+  width: 220px;
+}
+
+.main {
+  float: right;
+  width: 720px;
+}
+  /*
+  * Footer block
+  */
+.footer-contacts {
+  float: left;
+  width: 320px;
+  margin-right: 60px;
+}
+.footer-social {
+  float: left;
+  min-width: 160px;
+}
+.footer-copyright {
+  float: right;
+  width: 150px;
+}
+
+
+/*
+   Aside block
+   ========================================================================== */
+
+
+/*
+   Main block
+   ========================================================================== */
+.product-items .product-item {
+  display: inline-block;
+  vertical-align: top;
+  width: 220px;
+}
+
+/* ==========================================================================
+   Item page
+   ========================================================================== */
+.product-block .product-preview {
+  float: left;
+  width: 490px;
+}
+.product-block .product-description {
+  float: right;
+  width: 410px;
 }
