@@ -67,7 +67,6 @@
 //     float: right;
 
 //     //export to include
-// @import 'mixins/_utilities.styl'
 // base-font = 16
 // .container
 //   // rems(15px)
@@ -81,6 +80,7 @@
 //
 // variables//
 //
+@import 'mixins/_utilities.styl'
 $font__PtSans = 'PTSans', sans-serif, Helvetica, Arial
 $base__color = #000
 
@@ -92,3 +92,85 @@ h1
   font bold 30px/24px $font__PtSans
 h2
   font bold 21px/21px $font__PtSans
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+.clearfix {
+  clearfix()
+}
+.container {
+  min-width 768px
+  max-width 1200px
+  margin: 0 auto;
+}
+  /*
+  * Header
+  */
+.nav__list {
+  justify()
+  nolist()
+}
+.nav__item {
+  justify-child()
+}
+
+.intro {
+  padding-top 75px
+  padding-bottom 80px
+  text-align center
+}
+.promo {
+  width 576px
+  margin 0 auto
+  text-align center
+}
+
+  .feature-list:after:before,
+.feature-list:after:after {
+  content: " ";
+  display: table;
+}
+.feature-list:after:after {
+  clear: both;
+}
+
+.feature-block__item {
+  width 34%
+  padding 58px
+  text-align center
+  box-sizing border-box
+}
+
+.feature-block__item--right {
+  float right
+}
+
+.feature-list__item {
+  float left
+  width (100/3)%
+  padding 60px 73px 85px 73px
+  text-align center
+  box-sizing border-box
+}
+
+.index-search__title,
+.index-search__descr {
+  text-align center
+}
+
+.search-form {
+  width 576px
+  margin 0 auto
+}
+/*
+* Footer block
+*/
+.footer__logo,
+.social-block,
+.copyright-block {
+  float left
+  width (100/3)%
+  text-align center
+  box-sizing border-box
+}

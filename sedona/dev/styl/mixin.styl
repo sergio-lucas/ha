@@ -155,3 +155,12 @@ mx-pseudo($content = " ")
     {block}
 
 pseudo ?= mx-pseudo
+
+// Сброс стандартных стилей у списков.
+// Полезно при вёрстке различных меню
+clearlist()
+  padding 0
+  margin 0
+  list-style none
+  li
+    display inline-block
