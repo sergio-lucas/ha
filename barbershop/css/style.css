@@ -269,6 +269,7 @@ h2 {
 /*
    Main block
    ========================================================================== */
+<<<<<<< HEAD
    .inner-page-title {
      margin-bottom: 55px;
    }
@@ -317,10 +318,25 @@ h2 {
    .breadcrumbs .current:after {
      display: none;
    }
+=======
+.product-items {
+  font-size: 1px;
+  line-height: 0;
+  zoom: 1;
+  text-align: justify;
+  text-align-last: justify;
+  text-justify: newspaper;
+  padding: 0;
+  margin: 0;
+}
+>>>>>>> 3ff7104fee757cb74cb7963b9e827b823a6fefdb
 .product-items .product-item {
   display: inline-block;
   vertical-align: top;
   width: 220px;
+  font-size: 16px;
+  line-height: normal;
+  text-align: left;
 }
 
 /* ==========================================================================
@@ -350,6 +366,7 @@ h2 {
   float: right;
   width: 410px;
 }
+<<<<<<< HEAD
 .pagination {
   list-style-type: none;
   padding: 0;
@@ -379,3 +396,5 @@ h2 {
 .pagination a:hover {
   text-decoration: underline;
 }
+=======
+>>>>>>> 3ff7104fee757cb74cb7963b9e827b823a6fefdb
