@@ -1,17 +1,13 @@
-footer.main-footer
-  +b.footer.clearfix
-    +e('a')(href='#').logo #visitsedona
-    +b('ul').social-block
-      +e('li').item
-        +e('a')(href='#').btn--tw Twitter
-      +e('li').item
-        +e('a')(href='#').btn--fb Facebook
-      +e('li').item
-        +e('a')(href='#').btn--yt Youtube
-    +b.copyright-block
-      +e.create-by
-        .create-text Website by
-        +e('a')(href="#").create_link siteName
-      +e.create-for
-        .create-text for
-        +e('a')(href="#").create_link siteName
++b('footer').main-footer
+  +e('a')(href='#').item--logo #visitsedona
+  +b('ul').social-block.main-footer__item
+    +e('li').item
+      +e('a')(href='#').btn--tw Twitter
+    +e('li').item
+      +e('a')(href='#').btn--fb Facebook
+    +e('li').item
+      +e('a')(href='#').btn--yt Youtube
+  +b.copyright-block.main-footer__item
+    +e.create-by
+      |Website by
+      +e('a')(href="#").create_link siteName

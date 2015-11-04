@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="cleartype" content="on">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     <title>Sedona main page</title>
     <meta name="description" content="Sedona main page description">
     <meta name="keywords" content="Sedona, html-slicing, psd, template, html academy">
@@ -15,15 +15,15 @@
       <header class="main-header">
         <nav class="nav">
           <ul class="nav__list">
-            <li class="nav__item nav__item--active"><a href="#">Информация</a>
+            <li class="nav__item nav__item--active"><a href="#" class="nav__link">Информация</a>
             </li>
-            <li class="nav__item"><a href="#">Фото и видео</a>
+            <li class="nav__item"><a href="#" class="nav__link">Фото и видео</a>
             </li>
-            <li class="nav__item"><a href="#">LOGO??</a>
+            <li class="nav__item"><a href="#" class="nav__link nav__link--logo">LOGO??</a>
             </li>
-            <li class="nav__item"><a href="#">Карта штата</a>
+            <li class="nav__item"><a href="#" class="nav__link">Карта штата</a>
             </li>
-            <li class="nav__item"><a href="#">Гостиницы</a>
+            <li class="nav__item"><a href="#" class="nav__link">Гостиницы</a>
             </li>
           </ul>
         </nav>
@@ -32,8 +32,8 @@
         <div class="intro">
           <div class="intro__welcome">Welcome to the gorgeouse
           </div>
-          <h1 class="intro__site-name">Sedona
-          </h1>
+          <div class="intro__site-name">Sedona
+          </div>
           <div class="intro__slogan">Because the Grand Canyon sucks!"
           </div>
         </div>
@@ -55,27 +55,27 @@
                 </p>
               </div>
             </div>
-            <div class="clearfix feature-list">
-              <div class="feature-list__item"><span class="feature-list__ico"></span>
+            <div class="feature-list">
+              <div class="feature-list__item"><span class="feature-list__ico feature-list__ico--home"></span>
                 <h2 class="feature-list__title">Жильё
                 </h2>
                 <p class="feature-list__descr">Рекомендуем пожить в настоящем мотеле, все как в кино!
                 </p>
               </div>
-              <div class="feature-list__item"><span class="feature-list__ico"></span>
+              <div class="feature-list__item"><span class="feature-list__ico feature-list__ico--eat"></span>
                 <h2 class="feature-list__title">Еда
                 </h2>
                 <p class="feature-list__descr">Всегда заказывай фирменный бургер, Вы не разочаруетесь!
                 </p>
               </div>
-              <div class="feature-list__item"><span class="feature-list__ico"></span>
+              <div class="feature-list__item"><span class="feature-list__ico feature-list__ico--gift"></span>
                 <h2 class="feature-list__title">Сувениры
                 </h2>
                 <p class="feature-list__descr">Не только китайского, но и местного производства!
                 </p>
               </div>
             </div>
-            <div class="clearfix feature-block feature-block--bg-feature2">
+            <div class="feature-block feature-block--bg-feature2">
               <div class="feature-block__item feature-block__item--bg-blue feature-block__item--right">
                 <h2 class="feature-block__title">Там есть <br> мост дьявола
                 </h2>
@@ -85,9 +85,9 @@
                 </p>
               </div>
             </div>
-            <div class="feature-list">
+            <div class="feature-list feature-list--gray">
               <div class="feature-list__item">
-                <h2 class="feature-list__title">Небольшая площадь
+                <h2 class="feature-list__title">Небольшая <br> площадь
                 </h2>
                 <div class="feature-list__number">— №3 —
                 </div>
@@ -95,7 +95,7 @@
                 </p>
               </div>
               <div class="feature-list__item">
-                <h2 class="feature-list__title">Красивая дорога
+                <h2 class="feature-list__title">Красивая <br> дорога
                 </h2>
                 <div class="feature-list__number">— №4 —
                 </div>
@@ -103,7 +103,7 @@
                 </p>
               </div>
               <div class="feature-list__item">
-                <h2 class="feature-list__title">Мало туристов
+                <h2 class="feature-list__title">Мало <br> туристов
                 </h2>
                 <div class="feature-list__number">— №5 —
                 </div>
@@ -118,46 +118,58 @@
             <p class="index-search__descr">Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне
             </p>
             <form action="/" method="post" class="search-form">
-              <div class="search-form__title">Поиск гостиниц в Седоне
-              </div>
+              <button class="search-form__btn">Поиск гостиниц в Седоне
+              </button>
               <div class="search-form__inner">
-                <label for="dtarrival">Дата заезда:</label>
-                <input id="dtarrival" type="date" placeholder="24 Апреля 2014" class="date-arrival">
-                <label for="dtdep">Дата выезда:</label>
-                <input id="dtdep" type="date" placeholder="24 Июля 2014" class="date-dep">
+                <div class="search-form__date">
+                  <label for="dtarrival">Дата заезда:</label>
+                  <input id="dtarrival" type="date" placeholder="24 Апреля 2014" class="date-arrival">
+                </div>
+                <div class="search-form__date">
+                  <label for="dtdep">Дата выезда:</label>
+                  <input id="dtdep" type="date" placeholder="24 Июля 2014" class="date-dep">
+                </div>
                 <div class="search-form__age">
-                  <label for="adult">Взрослые:</label>
-                  <div class="input-number"><span class="input-number__btn input-number__btn--minus"></span>
-                    <input id="adult" type="text" placeholder="2" class="input-number__value"/><span class="input-number__btn input-number__btn--plus"></span>
+                  <div class="search-form__left">
+                    <label for="adult">Взрослые:</label>
+                    <div class="input-number">
+                      <button class="input-number__btn input-number__btn--minus">-
+                      </button>
+                      <input id="adult" type="text" placeholder="2" class="input-number__value"/>
+                      <button class="input-number__btn input-number__btn--plus">+
+                      </button>
+                    </div>
                   </div>
-                  <label for="child">Дети:</label>
-                  <div class="input-number"><span class="input-number__btn input-number__btn--minus"></span>
-                    <input id="child" type="text" placeholder="0" class="child"><span class="input-number__btn input-number__btn--plus"></span>
+                  <div class="search-form__right">
+                    <label for="child">Дети:</label>
+                    <div class="input-number">
+                      <button class="input-number__btn input-number__btn--minus">-
+                      </button>
+                      <input id="child" type="text" placeholder="0" class="input-number__value"/>
+                      <button class="input-number__btn input-number__btn--plus">+
+                      </button>
+                    </div>
                   </div>
                 </div>
-                <input type="submit" value="Найти" class="search-form__search"/>
+                <input type="submit" value="Найти" class="search-form__search-btn"/>
               </div>
             </form>
           </section>
+          <div class="main__bg-map">
+          </div>
         </article>
       </main>
-      <footer class="main-footer">
-        <div class="clearfix footer"><a href="#" class="footer__logo">#visitsedona</a>
-          <ul class="social-block">
-            <li class="social-block__item"><a href="#" class="social-block__btn social-block__btn--tw">Twitter</a>
-            </li>
-            <li class="social-block__item"><a href="#" class="social-block__btn social-block__btn--fb">Facebook</a>
-            </li>
-            <li class="social-block__item"><a href="#" class="social-block__btn social-block__btn--yt">Youtube</a>
-            </li>
-          </ul>
-          <div class="copyright-block">
-            <div class="copyright-block__create-by">
-              <div class="create-text">Website by</div><a href="#" class="copyright-block__create_link">siteName</a>
-            </div>
-            <div class="copyright-block__create-for">
-              <div class="create-text">for</div><a href="#" class="copyright-block__create_link">siteName</a>
-            </div>
+      <footer class="main-footer"><a href="#" class="main-footer__item main-footer__item--logo">#visitsedona</a>
+        <ul class="main-footer__item social-block">
+          <li class="social-block__item"><a href="#" class="social-block__btn social-block__btn--tw">Twitter</a>
+          </li>
+          <li class="social-block__item"><a href="#" class="social-block__btn social-block__btn--fb">Facebook</a>
+          </li>
+          <li class="social-block__item"><a href="#" class="social-block__btn social-block__btn--yt">Youtube</a>
+          </li>
+        </ul>
+        <div class="copyright-block main-footer__item">
+          <div class="copyright-block__create-by">Website by<a href="#" class="copyright-block__create_link">siteName</a>
           </div>
         </div>
       </footer>

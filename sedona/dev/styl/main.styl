@@ -81,13 +81,16 @@
 // variables//
 //
 @import 'mixins/_utilities.styl'
-$font__PtSans = 'PTSans', sans-serif, Helvetica, Arial
+$font__PtSans = 'PT Sans', sans-serif, Helvetica, Arial
 $base__color = #000
-
+//normalize
+normalize-css()
 //common
 body
   font normal 14px/normal $font__PtSans
   color $base__color
+  background: #f2f2f2;
+  text-transform uppercase
 h1
   font bold 30px/24px $font__PtSans
 h2
@@ -103,41 +106,129 @@ h2
   min-width 768px
   max-width 1200px
   margin: 0 auto;
+  box-shadow 0 5px 15px lighten(#000,80%)
 }
   /*
   * Header
   */
+
 .nav__list {
-  justify()
+  // justify()
+  height 55px
+  clearfix()
   nolist()
+  background #fff
 }
 .nav__item {
-  justify-child()
+  // justify-child()
+    float left
+    width 20%
+    text-align center
 }
-
+.nav__link {
+  display: block;
+  font bold 14px/normal $font__PtSans
+  line-height: 55px;
+  color $base__color
+  text-decoration none
+}
+.nav__link--logo {
+  position relative
+  font-size 0
+  padding 0
+  height 70px
+  background url(../img/logo.png) center no-repeat
+  z-index 1
+}
+.main {
+  background #fff
+}
 .intro {
-  padding-top 75px
+  position relative
+  padding-top: 75px;
   padding-bottom 80px
+  margin-bottom 60px
   text-align center
+  background: #f2f2f2 url("../img/bg-welcome.jpg") no-repeat center top;
 }
+  .intro:after {
+    content:'';
+    position absolute
+    bottom 0
+    left 0
+    height 57px
+    width 100%
+    background url(../img/welcome-stripe.png) 50% no-repeat
+  }
+  .intro__welcome {
+    width 256px
+    height 86px
+    font-size 0
+    margin 0 auto
+    margin-bottom 55px
+    background url(../img/welcome-top.png) 50% no-repeat
+  }
+  .intro__site-name {
+    width 458px
+    height 78px
+    font-size 0
+    margin 0 auto
+    margin-bottom 55px
+    background url(../img/welcome-middle.png) 50% no-repeat
+  }
+  .intro__slogan {
+    width 296px
+    height 80px
+    font-size 0
+    margin 0 auto
+    background url(../img/welcome-bottom.png) 50% no-repeat
+  }
 .promo {
   width 576px
   margin 0 auto
+  margin-bottom 50px
   text-align center
 }
+  .promo__title {
+    font-size 21px
+    line-height 26px
+    margin-bottom 32px
+  }
+  .promo__descr {
+    font-size 16px
+    line-height 26px
+    color #333
+  }
 
-  .feature-list:after:before,
-.feature-list:after:after {
-  content: " ";
-  display: table;
+.feature-list {
+  clearfix()
 }
-.feature-list:after:after {
-  clear: both;
-}
+  .feature-list__ico {
+    display block
+    margin 0 auto
+    width 75px
+    height 75px
+    background-repeat no-repeat
+    background-position 50%
+  }
+    .feature-list__ico--home {
+      background-image url(../img/icon/icon-features--1.png)
+    }
+    .feature-list__ico--eat {
+      background-image url(../img/icon/icon-features--2.png)
+    }
+    .feature-list__ico--gift {
+      background-image url(../img/icon/icon-features--3.png)
+    }
+  .feature-list__descr {
+    font-size 14px
+    color #333
+  }
 
 .feature-block__item {
   width 34%
-  padding 58px
+  height 100%
+  padding-top 50px
   text-align center
   box-sizing border-box
 }
@@ -154,23 +245,242 @@ h2
   box-sizing border-box
 }
 
+.feature-block__item--bg-blue {
+  background #81b3d2
+  color #fff
+}
+.feature-block__title {
+  margin-top 0
+  margin-bottom 25px
+  font-size 21px
+  font-weight bold
+}
+.feature-block__number {
+  margin-bottom 25px
+}
+.feature-block__descr {
+  font-size 14px
+  line-height 21px
+}
+.feature-block {
+  height: 256px;
+  position: relative;
+  background-repeat no-repeat
+}
+.feature-block--bg-feature1 {
+  background-image url(../img/feauruees-1.jpg)
+  background-position 100% 50%
+}
+.feature-block--bg-feature2 {
+  background-image url(../img/feauruees-2.jpg)
+  background-position 0 50%
+}
+
+.feature-list--gray {
+  background #eee
+}
+
+.index-search {
+  position relative
+  width 576px
+  margin 0 auto
+  padding-top 55px
+}
 .index-search__title,
 .index-search__descr {
   text-align center
 }
+.index-search__title {
+  margin-top 0
+  margin-bottom 30px
+  font-size 30px
+  line-height 24px
+}
+.index-search__descr {
+  margin-bottom 50px
+  font-size 14px
+  line-height 24px
+  color #333
+}
+.search-form__btn {
+  display block
+  width 100%
+  padding 32px 0
+  border 1px solid transparent
+  background #766357
+  color #fff
+  font-size 21px
+  font-weight bold
+  line-height 26px
+  text-transform uppercase
+}
+  .search-form__inner {
+    // display none
+      position absolute
+      top 100%
+      width 100%
+      padding 55px
+      background: #fff;
+      box-sizing border-box
+      box-shadow 0 7px 15px lighten(#000,80%)
+      z-index 2
+  }
+  .search-form__date {
+    margin-bottom 30px
+  }
+    .search-form__date label {
+      display inline-block
+      min-width 111px
+      font-size 14px
+      line-height 26px
+      font-weight bold
+      box-sizing border-box
+    }
+      .search-form__date input {
+        display inline-block
+        width 347px
+        padding 8px 12px
+        border 1px solid transparent
+        background #f2f2f2
+        font-size 14px
+        font-weight bold
+        color #000
+        box-sizing border-box
+      }
+    .search-form__age label {
+      float left
+      font-size 14px
+      line-height 26px
+      font-weight bold
+    }
+  .search-form__age {
+    clearfix()
+    margin-bottom 54px
+  }
+  .search-form__left{
+    clearfix()
+    width 230px
+    float left
+  }
+  .search-form__right {
+    width 180px
+    float right
+  }
 
-.search-form {
-  width 576px
-  margin 0 auto
+  .input-number {
+    position relative
+    float right
+    width 114px
+  }
+  .input-number__btn {
+  position absolute
+  top 0
+  }
+    .input-number__value {
+      width 100%
+      box-sizing border-box
+      text-align center
+      padding 8px 12px
+      border 1px solid transparent
+      background #f2f2f2
+      font-size 14px
+      font-weight bold
+      color #000
+      placeholder-color(#000)
+    }
+    .input-number__btn {
+      padding 8px 12px
+      border 1px solid transparent
+      background #f2f2f2
+      font-size 14px
+      font-weight bold
+      color #a9a9a9
+    }
+   .input-number__btn--minus {
+    left 0
+   }
+   .input-number__btn--plus {
+    right 0
+   }
+
+.search-form__search-btn {
+  display block
+  width 100%
+  padding 14px 0
+  font-size 21px
+  font-weight bold
+  line-height 26px
+  border 1px solid transparent
+  text-transform uppercase
+  background #81b3d2
+  color #fff
+}
+
+.main__bg-map {
+  position relative
+  width: 100%;
+  height: 592px;
+  margin-bottom: -118px;
+  background: url(../img/bg-map.jpg) 0 100% no-repeat;
+  z-index: 1;
 }
 /*
 * Footer block
 */
-.footer__logo,
-.social-block,
-.copyright-block {
+.main-footer {
+  clearfix()
+  position: relative;
+  background-color: rgba(255,255,255,.9);
+  z-index: 10;
+  padding: 36px;
+}
+
+.main-footer__item {
   float left
   width (100/3)%
   text-align center
   box-sizing border-box
+}
+
+.main-footer__item--logo {
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 700;
+  padding-top: 10px;
+  text-decoration none
+  color #000
+}
+.social-block {
+  nolist()
+}
+.social-block__btn {
+  display inline-block
+  vertical-align: top;
+  font-size 0
+  background: #81b3d2 url(../img/sedona-sprite.png) no-repeat -381px -86px;
+  width: 46px;
+  height: 48px;
+  margin-right: 5px;
+}
+  .social-block__btn:hover {
+    background-color: #669ec0;
+  }
+.social-block__btn--fb {
+  background-position: -414px -85px;
+}
+.social-block__btn--yt {
+    background-position: -451px -86px;
+}
+
+.copyright-block__create_link {
+  display inline-block
+  vertical-align: middle;
+  font-size 0
+  margin-left 15px
+  width: 113px;
+  height: 39px;
+  background: url(../img/htmlacademy.png) no-repeat;
+}
+.copyright-block__create-by {
+  font-weight bold
 }

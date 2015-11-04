@@ -1,12 +1,56 @@
 body {
-    font: normal 14px/1.5 'PTSans' Arial, Helvetica, sans-serif;
-    color: #000;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  min-width: 960px;
+  background: #111 url("../img/body-bg.jpg") no-repeat center top;
 }
 h1 {
-    font: bold 30px/normal 'Myriad Pro', Arial, Helvetica, sans-serif;
+    font: bold 30px/normal 'PT Sans Narrow', Arial, Helvetica, sans-serif;
 }
 h2 {
-    font: bold 24px/normal 'Myriad Pro', Arial, Helvetica, sans-serif;
+    font: bold 24px/normal 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+}
+.inner-page {
+  color: #000;
+  background: #f8f3f0 url("../img/bg-pattern.jpg") repeat;
+}
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px 33px;
+  margin-right: 16px;
+
+  font-size: 14px;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 700;
+  line-height: 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: #fff;
+  background: #000;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background: #663d15;
+}
+
+.btn:disabled {
+  cursor: default;
+  opacity: .5;
+}
+
+.btn:disabled:hover {
+  background: #000;
 }
 /*
  * Layout
@@ -19,7 +63,7 @@ h2 {
   clear: both;
 }
 .container {
-  width: 960px;
+  width: 940px;
   margin: 0 auto;
   padding-left: 10px;
   padding-right: 10px;
@@ -27,6 +71,10 @@ h2 {
   /*
   * Header block
   */
+.main-header {
+  margin-bottom: 60px;
+  background: #000;
+}
 .main-navigation {
   float: left;
   width: 800px;
@@ -39,9 +87,66 @@ h2 {
   .main-navigation li {
     float: left;
   }
+    .main-navigation a {
+      display: block;
+      padding: 25px 20px;
+      text-decoration: none;
+      color: #fff;
+    }
+  .main-navigation a:hover {
+    background: #242424;
+  }
+
+  .main-navigation .active a {
+    position: relative;
+  }
+
+  .main-navigation .active a:hover {
+    background: none;
+  }
+
+  .main-navigation .active a:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 5px;
+    background: white;
+  }
 .user-block {
   float: right;
   width: 100px;
+}
+.login {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  padding: 25px 20px;
+  padding-left: 50px;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.login:hover {
+  background: #242424;
+}
+
+.login:before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 20px;
+  width: 18px;
+  height: 18px;
+  background: transparent url("../img/sprite.png") no-repeat;
+  background-position: 0 -212px;
+}
+
+.login:hover:before {
+  opacity: .3;
 }
 .side-bar {
   float: left;
@@ -55,19 +160,105 @@ h2 {
   /*
   * Footer block
   */
-.footer-contacts {
-  float: left;
-  width: 320px;
-  margin-right: 60px;
-}
-.footer-social {
-  float: left;
-  min-width: 160px;
-}
-.footer-copyright {
-  float: right;
-  width: 150px;
-}
+  .main-footer {
+    margin-top: 60px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+
+    color: #fff; /* лучше явно прописать цвет для футера */
+    background: #252525 url("img/pattern-black.jpg");
+  }
+
+  .footer-contacts {
+    float: left;
+    width: 320px;
+    margin-right: 80px;
+  }
+
+  .footer-contacts p {
+    margin-top: 0;
+  }
+
+  .footer-contacts a {
+    color: #fff;
+  }
+
+  .footer-social {
+    float: left;
+    text-align: center;
+  }
+
+  .footer-copyright {
+    float: right;
+
+    max-width: 320px;
+  }
+
+  .footer-contacts a:hover {
+    text-decoration: none;
+  }
+
+  .footer-social p {
+    margin: 0;
+    margin-bottom: 15px;
+  }
+
+  .social-btn {
+    margin: 0 2px;
+    display: inline-block;
+    vertical-align: top;
+    width: 43px;
+    height: 43px;
+
+    font-size: 0;
+    text-decoration: none;
+
+    background: #000 url("../img/sprite.png") no-repeat center;
+  }
+
+  .social-btn:hover {
+      background-color: #fff;
+  }
+
+  .social-btn-vk {
+    background-position: 9px -968px;
+  }
+
+  .social-btn-fb {
+    background-position: 16px -691px;
+  }
+
+  .social-btn-inst {
+    background-position: 11px -832px;
+  }
+
+  .social-btn-vk:hover {
+    background-position: 9px -902px;
+  }
+
+  .social-btn-fb:hover {
+    background-position: 16px -619px;
+  }
+
+  .social-btn-inst:hover {
+    background-position: 11px -762px;
+  }
+
+  .footer-copyright p {
+    margin: 0;
+    margin-bottom: 15px;
+
+    text-align: center;
+  }
+
+  .footer-copyright .btn {
+      margin-right: 0;
+  }
+
+  .footer-copyright .btn:hover {
+    color: #000;
+    background: #fff;
+  }
 
 
 /*
@@ -78,6 +269,54 @@ h2 {
 /*
    Main block
    ========================================================================== */
+   .inner-page-title {
+     margin-bottom: 55px;
+   }
+
+   .inner-page-title h1 {
+     margin: 0;
+     margin-bottom: 20px;
+     padding: 0;
+     font-size: 30px;
+     line-height: 42px;
+   }
+   .breadcrumbs {
+     margin: 0;
+     padding: 0;
+     list-style: none;
+   }
+
+   .breadcrumbs li {
+     position: relative;
+     display: inline;
+     padding-right: 40px;
+   }
+
+   .breadcrumbs li:after {
+     content: "";
+     position: absolute;
+     top: 6px;
+     right: 15px;
+     width: 8px;
+     height: 8px;
+     background: #000;
+     transform: rotate(45deg);
+   }
+   .breadcrumbs a {
+     text-decoration: none;
+     color: #000;
+   }
+
+   .breadcrumbs a:hover {
+     text-decoration: underline;
+   }
+
+   .breadcrumbs .current {
+     color: #aba9a7;
+   }
+   .breadcrumbs .current:after {
+     display: none;
+   }
 .product-items .product-item {
   display: inline-block;
   vertical-align: top;
@@ -87,11 +326,56 @@ h2 {
 /* ==========================================================================
    Item page
    ========================================================================== */
+.product-items {
+  margin-bottom: 44px;
+  box-shadow: 0 0 15px rgba(0, 1, 1, 0.2);
+  text-align: justify;
+}
 .product-block .product-preview {
   float: left;
   width: 490px;
 }
+.product-img__big {
+  text-align: center;
+}
+.product-img__small {
+  width: 100%;
+  display: table;
+}
+.product-img__small a {
+  display: table-cell;
+  text-align: center;
+}
 .product-block .product-description {
   float: right;
   width: 410px;
+}
+.pagination {
+  list-style-type: none;
+  padding: 0;
+  font-size: 0;
+}
+.pagination li {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  margin-right: 7px;
+}
+.pagination .active {
+  height: 43px;
+  line-height: 43px;
+  padding: 0 18px;
+  background: #fff;
+}
+.pagination a {
+  display: block;
+  height: 43px;
+  line-height: 43px;
+  padding: 0 18px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+.pagination a:hover {
+  text-decoration: underline;
 }

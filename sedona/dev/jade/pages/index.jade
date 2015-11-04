@@ -14,7 +14,7 @@ block content
       +b.intro
         +e.welcome
           |Welcome to the gorgeouse
-        +e('h1').site-name Sedona
+        +e('div').site-name Sedona
         +e.slogan
           |Because the Grand Canyon sucks!"
       article
@@ -27,56 +27,61 @@ block content
               +e('h2').title Настоящий <br> городок
               +e.number — №1 —
               +e('p').descr Седона не атракцион для туристов, там течёт своя жизнь
-          +b.feature-list.clearfix
+          +b.feature-list
             +e.item
-              +e('span').ico
+              +e('span').ico--home
               +e('h2').title Жильё
               +e('p').descr Рекомендуем пожить в настоящем мотеле, все как в кино!
             +e.item
-              +e('span').ico
+              +e('span').ico--eat
               +e('h2').title Еда
               +e('p').descr Всегда заказывай фирменный бургер, Вы не разочаруетесь!
             +e.item
-              +e('span').ico
+              +e('span').ico--gift
               +e('h2').title Сувениры
               +e('p').descr Не только китайского, но и местного производства!
-          +b.feature-block--bg-feature2.clearfix
+          +b.feature-block--bg-feature2
             +e.item--right.--bg-blue
               +e('h2').title Там есть <br> мост дьявола
               +e.number — №2 —
               +e('p').descr Да, по нему можно пройти! Если конечно вы осмелитесь
-          +b.feature-list
+          +b.feature-list--gray
             +e.item
-              +e('h2').title Небольшая площадь
+              +e('h2').title Небольшая <br> площадь
               +e.number — №3 —
               +e('p').descr Все достопримечательности находятся очень близко
             +e.item
-              +e('h2').title Красивая дорога
+              +e('h2').title Красивая <br> дорога
               +e.number — №4 —
               +e('p').descr Ехать в Седону из Лас-Вегаса совсем не скучно!
             +e.item
-              +e('h2').title Мало туристов
+              +e('h2').title Мало <br> туристов
               +e.number — №5 —
               +e('p').descr Большинство едет в гранд каньон и толпится там
         +b('section').index-search
           +e('h2').title Заинтересовались?
           +e('p').descr Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне
           +b('form')(action="/" method="post").search-form
-            +e.title Поиск гостиниц в Седоне
+            +e('button').btn Поиск гостиниц в Седоне
             +e.inner
-              label(for="dtarrival") Дата заезда:
-              input(class="date-arrival" id="dtarrival" type="date" placeholder="24 Апреля 2014")
-              label(for="dtdep") Дата выезда:
-              input(class="date-dep" id="dtdep" type="date" placeholder="24 Июля 2014")
+              +e.date
+                label(for="dtarrival") Дата заезда:
+                input(class="date-arrival" id="dtarrival" type="date" placeholder="24 Апреля 2014")
+              +e.date
+                label(for="dtdep") Дата выезда:
+                input(class="date-dep" id="dtdep" type="date" placeholder="24 Июля 2014")
               +e.age
-                label(for="adult") Взрослые:
-                +b.input-number
-                  +e('span').btn--minus
-                  +e('input')(id="adult" type="text" placeholder="2").value
-                  +e('span').btn--plus
-                label(for="child") Дети:
-                +b.input-number
-                  +e('span').btn--minus
-                  input(class="child" id="child" type="text" placeholder="0")
-                  +e('span').btn--plus
-              +e('input')(type="submit" value="Найти").search
+                +e.left
+                  label(for="adult") Взрослые:
+                  +b.input-number
+                    +e('button').btn--minus -
+                    +e('input')(id="adult" type="text" placeholder="2").value
+                    +e('button').btn--plus +
+                +e.right
+                  label(for="child") Дети:
+                  +b.input-number
+                    +e('button').btn--minus -
+                    +e('input')(id="child" type="text" placeholder="0").value
+                    +e('button').btn--plus +
+              +e('input')(type="submit" value="Найти").search-btn
+        +e.bg-map
