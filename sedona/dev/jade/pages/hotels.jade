@@ -1,0 +1,120 @@
+extends ../layouts/one_column
+
+block head
+  - pageTitle = 'Landing page title';
+  - pageDescription = 'Landing page description';
+  - pageKeywords = 'landing, html-slicing, psd, template, ua web challenge';
+
+//- block scripts
+//-   +script(['js/main.js'])
+
+//- content
+block content
+  +b('main').main
+    +b.hotel-filter
+      +e('form')(method="post" action="/").parameters
+        +b('ul').options-block
+          +e('li')
+            +e('h2').title Инфраструктура:
+          +e('li')
+            input(type="checkbox" id="pool" name="pool" checked)
+            label(for="pool") Бассейн
+          +e('li')
+            input(type="checkbox" id="parking" name="parking" checked)
+            label(for="parking") Парковка
+          +e('li')
+            input(type="checkbox" id="wifi" name="wifi" checked)
+            label(for="wifi") Wi-Fi
+        +b('ul').options-block
+          +e('li')
+            +e('h2').title Тип жилья:
+          +e('li')
+            input(type="checkbox" id="hotel" name="hotel" checked)
+            label(for="hotel") Гостиница
+          +e('li')
+            input(type="checkbox" id="motel" name="motel" checked)
+            label(for="motel") Мотель
+          +e('li')
+            input(type="checkbox" id="apart" name="apart" checked)
+            label(for="apart") Апартаменты
+        +b.price-night
+          +e('h2').title Стоимость в сутки (р):
+          +e.from-to
+            +e.start от
+              span(id="start-value") 0
+            +e.end до
+              span(id="end-value") 3000
+          +e.range
+            +e.range-bar
+            each val in ['--start', '--end']
+              +e('a')(class="range-slide "+val)= val
+      +b.middle-filter
+        +e.found Найдено:
+          span#total-count 3
+        +b('ul').sort-filter
+          +e('li').item Сортировка:
+          +e('li').item--active
+            a(href='#') по цене
+          +e('li').item
+            a(href='#') по типу
+          +e('li').item
+            a(href='#') по рейтингу
+        +e('ul').order
+          li
+            a(href='#') desc
+          li
+            a(href='#') asc
+      +b.filter-output
+        +b.hotel-item
+          +e.img
+            img(src='img/amara-resort&spa.jpg' alt='hotelName')
+          +e.descr
+            +e('a')(href='#').title Amara Resort & Spa
+            +e.type Гостиница
+            +e.price от 3500 р.
+            +e('ul').btn-block
+              +e('li')
+                +e('a')(href='#').btn--bg-blue Подробнее
+              +e('li')
+                +e('a')(href='#').btn--bg-broun Забронировать
+          +e.rating
+            +e.rating-stars--four
+            +e.mark Рейтинг:
+              span#mark-val 8,5
+
+        +b.hotel-item
+          +e.img
+            img(src='img/desert-quail-inn.jpg' alt='hotelName')
+          +e.descr
+            +e('a')(href='#').title Desert Quail Inn
+            +e.type Мотель
+            +e.price от 2000 р.
+            +e('ul').btn-block
+              +e('li')
+                +e('a')(href='#').btn--bg-blue Подробнее
+              +e('li')
+                +e('a')(href='#').btn--bg-broun Забронировать
+          +e.rating
+            +e.rating-stars--two
+            +e.mark Рейтинг:
+              span#mark-val 8,9
+
+        +b.hotel-item
+          +e.img
+            img(src='img/villas-at-poco-diablo.jpg' alt='hotelName')
+          +e.descr
+            +e('a')(href='#').title Villas at Poco Diablo
+            +e.type Апартаменты
+            +e.price от 4000 р.
+            +e('ul').btn-block
+              +e('li')
+                +e('a')(href='#').btn--bg-blue Подробнее
+              +e('li')
+                +e('a')(href='#').btn--bg-broun Забронировать
+          +e.rating
+            +e.rating-stars--three
+            +e.mark Рейтинг:
+              span#mark-val 9,2
+
+
+

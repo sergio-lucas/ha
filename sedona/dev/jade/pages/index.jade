@@ -1,0 +1,87 @@
+extends ../layouts/one_column
+
+block head
+  - pageTitle = 'Sedona main page';
+  - pageDescription = 'Sedona main page description';
+  - pageKeywords = 'Sedona, html-slicing, psd, template, html academy';
+
+//- block scripts
+//-   +script(['js/main.js'])
+
+//- content
+block content
+    +b('main').main
+      +b.intro
+        +e.welcome
+          |Welcome to the gorgeouse
+        +e('div').site-name Sedona
+        +e.slogan
+          |Because the Grand Canyon sucks!"
+      article
+        +b.promo
+          +e('h1').title Седона — небольшой городок в Аризоне, заслуживающий большего!
+          +e('p').descr Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон!
+        +b('section').features
+          +b.feature-block--bg-feature1
+            +e.item--bg-blue
+              +e('h2').title Настоящий <br> городок
+              +e.number — №1 —
+              +e('p').descr Седона не атракцион для туристов, там течёт своя жизнь
+          +b.feature-list
+            +e.item
+              +e('span').ico--home
+              +e('h2').title Жильё
+              +e('p').descr Рекомендуем пожить в настоящем мотеле, все как в кино!
+            +e.item
+              +e('span').ico--eat
+              +e('h2').title Еда
+              +e('p').descr Всегда заказывай фирменный бургер, Вы не разочаруетесь!
+            +e.item
+              +e('span').ico--gift
+              +e('h2').title Сувениры
+              +e('p').descr Не только китайского, но и местного производства!
+          +b.feature-block--bg-feature2
+            +e.item--right.--bg-blue
+              +e('h2').title Там есть <br> мост дьявола
+              +e.number — №2 —
+              +e('p').descr Да, по нему можно пройти! Если конечно вы осмелитесь
+          +b.feature-list--gray
+            +e.item
+              +e('h2').title Небольшая <br> площадь
+              +e.number — №3 —
+              +e('p').descr Все достопримечательности находятся очень близко
+            +e.item
+              +e('h2').title Красивая <br> дорога
+              +e.number — №4 —
+              +e('p').descr Ехать в Седону из Лас-Вегаса совсем не скучно!
+            +e.item
+              +e('h2').title Мало <br> туристов
+              +e.number — №5 —
+              +e('p').descr Большинство едет в гранд каньон и толпится там
+        +b('section').index-search
+          +e('h2').title Заинтересовались?
+          +e('p').descr Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне
+          +b('form')(action="/" method="post").search-form
+            +e('button').btn Поиск гостиниц в Седоне
+            +e.inner
+              +e.date
+                label(for="dtarrival") Дата заезда:
+                input(class="date-arrival" id="dtarrival" type="date" placeholder="24 Апреля 2014")
+              +e.date
+                label(for="dtdep") Дата выезда:
+                input(class="date-dep" id="dtdep" type="date" placeholder="24 Июля 2014")
+              +e.age
+                +e.left
+                  label(for="adult") Взрослые:
+                  +b.input-number
+                    +e('button').btn--minus -
+                    +e('input')(id="adult" type="text" placeholder="2").value
+                    +e('button').btn--plus +
+                +e.right
+                  label(for="child") Дети:
+                  +b.input-number
+                    +e('button').btn--minus -
+                    +e('input')(id="child" type="text" placeholder="0").value
+                    +e('button').btn--plus +
+              +e('input')(type="submit" value="Найти").search-btn
+        +e.bg-map

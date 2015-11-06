@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="cleartype" content="on">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <title>Landing page title</title>
+    <meta name="description" content="Landing page description">
+    <meta name="keywords" content="landing, html-slicing, psd, template, ua web challenge">
+    <link href="css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <header class="main-header">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item nav__item--active"><a href="#" class="nav__link">Информация</a>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Фото и видео</a>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link nav__link--logo">LOGO??</a>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Карта штата</a>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Гостиницы</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="main">
+        <div class="hotel-filter">
+          <form method="post" action="/" class="hotel-filter__parameters">
+            <ul class="options-block">
+              <li>
+                <h2 class="options-block__title">Инфраструктура:
+                </h2>
+              </li>
+              <li>
+                <input type="checkbox" id="pool" name="pool" checked>
+                <label for="pool">Бассейн</label>
+              </li>
+              <li>
+                <input type="checkbox" id="parking" name="parking" checked>
+                <label for="parking">Парковка</label>
+              </li>
+              <li>
+                <input type="checkbox" id="wifi" name="wifi" checked>
+                <label for="wifi">Wi-Fi</label>
+              </li>
+            </ul>
+            <ul class="options-block">
+              <li>
+                <h2 class="options-block__title">Тип жилья:
+                </h2>
+              </li>
+              <li>
+                <input type="checkbox" id="hotel" name="hotel" checked>
+                <label for="hotel">Гостиница</label>
+              </li>
+              <li>
+                <input type="checkbox" id="motel" name="motel" checked>
+                <label for="motel">Мотель</label>
+              </li>
+              <li>
+                <input type="checkbox" id="apart" name="apart" checked>
+                <label for="apart">Апартаменты</label>
+              </li>
+            </ul>
+            <div class="price-night">
+              <h2 class="price-night__title">Стоимость в сутки (р):
+              </h2>
+              <div class="price-night__from-to">
+                <div class="price-night__start">от<span id="start-value">0</span>
+                </div>
+                <div class="price-night__end">до<span id="end-value">3000</span>
+                </div>
+              </div>
+              <div class="price-night__range">
+                <div class="price-night__range-bar">
+                </div><a class="price-night__range-slide price-night__range-slide--start">--start</a><a class="price-night__range-slide price-night__range-slide--end">--end</a>
+              </div>
+            </div>
+          </form>
+          <div class="middle-filter">
+            <div class="middle-filter__found">Найдено:<span id="total-count">3</span>
+            </div>
+            <ul class="sort-filter">
+              <li class="sort-filter__item">Сортировка:
+              </li>
+              <li class="sort-filter__item sort-filter__item--active"><a href="#">по цене</a>
+              </li>
+              <li class="sort-filter__item"><a href="#">по типу</a>
+              </li>
+              <li class="sort-filter__item"><a href="#">по рейтингу</a>
+              </li>
+            </ul>
+            <ul class="middle-filter__order">
+              <li><a href="#">desc</a></li>
+              <li><a href="#">asc</a></li>
+            </ul>
+          </div>
+          <div class="filter-output">
+            <div class="hotel-item">
+              <div class="hotel-item__img"><img src="img/amara-resort&amp;spa.jpg" alt="hotelName">
+              </div>
+              <div class="hotel-item__descr"><a href="#" class="hotel-item__title">Amara Resort & Spa</a>
+                <div class="hotel-item__type">Гостиница
+                </div>
+                <div class="hotel-item__price">от 3500 р.
+                </div>
+                <ul class="hotel-item__btn-block">
+                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-blue">Подробнее</a>
+                  </li>
+                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-broun">Забронировать</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="hotel-item__rating">
+                <div class="hotel-item__rating-stars hotel-item__rating-stars--four">
+                </div>
+                <div class="hotel-item__mark">Рейтинг:<span id="mark-val">8,5</span>
+                </div>
+              </div>
+            </div>
+            <div class="hotel-item">
+              <div class="hotel-item__img"><img src="img/desert-quail-inn.jpg" alt="hotelName">
+              </div>
+              <div class="hotel-item__descr"><a href="#" class="hotel-item__title">Desert Quail Inn</a>
+                <div class="hotel-item__type">Мотель
+                </div>
+                <div class="hotel-item__price">от 2000 р.
+                </div>
+                <ul class="hotel-item__btn-block">
+                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-blue">Подробнее</a>
+                  </li>
+                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-broun">Забронировать</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="hotel-item__rating">
+                <div class="hotel-item__rating-stars hotel-item__rating-stars--two">
+                </div>
+                <div class="hotel-item__mark">Рейтинг:<span id="mark-val">8,9</span>
+                </div>
+              </div>
+            </div>
+            <div class="hotel-item">
+              <div class="hotel-item__img"><img src="img/villas-at-poco-diablo.jpg" alt="hotelName">
+              </div>
+              <div class="hotel-item__descr"><a href="#" class="hotel-item__title">Villas at Poco Diablo</a>
+                <div class="hotel-item__type">Апартаменты
+                </div>
+                <div class="hotel-item__price">от 4000 р.
+                </div>
+                <ul class="hotel-item__btn-block">
+                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-blue">Подробнее</a>
+                  </li>
+                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-broun">Забронировать</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="hotel-item__rating">
+                <div class="hotel-item__rating-stars hotel-item__rating-stars--three">
+                </div>
+                <div class="hotel-item__mark">Рейтинг:<span id="mark-val">9,2</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="main-footer"><a href="#" class="main-footer__item main-footer__item--logo">#visitsedona</a>
+        <ul class="main-footer__item social-block">
+          <li class="social-block__item"><a href="#" class="social-block__btn social-block__btn--tw">Twitter</a>
+          </li>
+          <li class="social-block__item"><a href="#" class="social-block__btn social-block__btn--fb">Facebook</a>
+          </li>
+          <li class="social-block__item"><a href="#" class="social-block__btn social-block__btn--yt">Youtube</a>
+          </li>
+        </ul>
+        <div class="copyright-block main-footer__item">
+          <div class="copyright-block__create-by">Website by<a href="#" class="copyright-block__create_link">siteName</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

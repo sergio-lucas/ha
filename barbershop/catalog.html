@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:700&amp;subset=latin,cyrillic-ext">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
+<body class="inner-page">
   <header class="main-header" role="banner">
-    <div class="container">
+    <div class="container clearfix">
       <nav class="main-navigation" role="navigation">
         <ul>
           <li><a href="#">Главная</a></li>
           <li><a href="#">Информация</a></li>
           <li><a href="#">Новости</a></li>
-          <li><a href="#">Прайс-лист</a></li>
+          <li class="active"><a href="#">Прайс-лист</a></li>
           <li><a href="#">Магазин</a></li>
           <li><a href="#">Контакты</a></li>
         </ul>
@@ -22,13 +25,15 @@
       </div>
     </div>
   </header>
-  <article class="container">
-    <h1>Средства для ухода</h1>
-    <ul class="breadcrubs">
-      <li><a href="#">Главная</a></li>
-      <li><a href="#">Магазин</a></li>
-      <li class="active">Средства для ухода</li>
-    </ul>
+  <article class="container clearfix">
+    <div class="inner-page-title">
+      <h1>Средства для ухода</h1>
+      <ul class="breadcrumbs">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Магазин</a></li>
+        <li class="current">Средства для ухода</li>
+      </ul>
+    </div>
     <aside class="side-bar">
       <form action="#" method="POST">
         <div class="manufacturer">
@@ -77,14 +82,14 @@
             </li>
           </ul>
         </div>
-        <button id="filter" class="btn filter-btn" type="submit">Показать</button>
+        <a id="filter" class="btn filter-btn" href="#filter">Показать</a>
       </form>
     </aside>
     <main class="main">
       <div class="product-items">
         <article class="product-item">
           <a href="#">
-            <img src="http://placehold.it/150x100" alt="Name of product-1">
+            <img src="img/baxter-of-california_travel-set--small.jpg" height="165" width="220" alt="Name of product-1">
             <h2 class="product-title">
               Набор для путешествий
               <span class="prdouct-manufacturer">Baxter of califirnia</span>
@@ -97,7 +102,7 @@
         </article>
         <article class="product-item">
           <a href="#">
-            <img src="http://placehold.it/150x100" alt="Name of product-2">
+            <img src="img/baxter-of-california_hair-conditioner--small.jpg" height="165" width="220" alt="Name of product-2">
             <h2 class="product-title">
               Увлажняющий кондиционер
               <span class="prdouct-manufacturer">Baxter of califirnia</span>
@@ -110,7 +115,7 @@
         </article>
         <article class="product-item">
           <a href="#">
-            <img src="http://placehold.it/150x100" alt="Name of product-3">
+            <img src="img/suavecito_hair-gel--small.jpg" height="165" width="220" alt="Name of product-3">
             <h2 class="product-title">
               Гель для волос
               <span class="prdouct-manufacturer">Sauvecito</span>
@@ -123,7 +128,7 @@
         </article>
         <article class="product-item">
           <a href="#">
-            <img src="http://placehold.it/150x100" alt="Name of product-4">
+            <img src="img/american-crew_hair-styling-gel--small.jpg" height="165" width="220" alt="Name of product-4">
             <h2 class="product-title">
               Глина для укладки волос
               <span class="prdouct-manufacturer">American crew</span>
@@ -136,7 +141,7 @@
         </article>
         <article class="product-item">
           <a href="#">
-            <img src="http://placehold.it/150x100" alt="Name of product-5">
+            <img src="img/american-crew_hair-gel--small.jpg" height="165" width="220" alt="Name of product-5">
             <h2 class="product-title">
               Гель для волос
               <span class="prdouct-manufacturer">American crew</span>
@@ -149,7 +154,7 @@
         </article>
         <article class="product-item">
           <a href="#">
-            <img src="http://placehold.it/150x100" alt="Name of product-6">
+            <img src="img/baxter-of-california_shaving-set--small.jpg" height="165" width="220" alt="Name of product-6">
             <h2 class="product-title">
               Набор для бритья
               <span class="prdouct-manufacturer">American crew</span>
@@ -170,7 +175,7 @@
     </main>
   </article>
   <footer class="main-footer" role="contentinfo">
-    <div class="container">
+    <div class="container clearfix">
       <div class="footer-contacts">
         <p>Барбершоп «Бородинский»</p>
         <p>Адрес: г. Санкт-Петербург, Б. Конюшенная, д. 19/8</p>
