@@ -43,7 +43,7 @@ gulp.task('copyimages', function() {
 
 
 gulp.task('watch', ['stylus', 'browserSync', 'jade'], function (){
-  gulp.watch('dev/styl/main.styl', ['stylus']);
+  gulp.watch('dev/styl/*.styl', ['stylus']);
   gulp.watch('dev/jade/pages/**/*.jade', ['jade']);
   gulp.watch('dev/img/*.*', ['copyimages']);
 });

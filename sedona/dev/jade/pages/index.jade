@@ -62,8 +62,8 @@ block content
           +e('h2').title Заинтересовались?
           +e('p').descr Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне
           +b('form')(action="/" method="post").search-form
-            +e('button').btn Поиск гостиниц в Седоне
-            +e.inner
+            +e('a').btn(href="#" class="js-toggleShow") Поиск гостиниц в Седоне
+            +e.inner.js-show
               +e.date
                 label(for="dtarrival") Дата заезда:
                 input(class="date-arrival" id="dtarrival" type="date" placeholder="24 Апреля 2014")

@@ -36,135 +36,153 @@
                 <h2 class="options-block__title">Инфраструктура:
                 </h2>
               </li>
-              <li>
-                <input type="checkbox" id="pool" name="pool" checked>
-                <label for="pool">Бассейн</label>
+              <li class="options-block__item">
+                <input type="checkbox" id="pool" name="pool" checked="checked" class="options-block__check"/>
+                <label for="pool" class="options-block__label">Бассейн
+                </label>
               </li>
-              <li>
-                <input type="checkbox" id="parking" name="parking" checked>
-                <label for="parking">Парковка</label>
+              <li class="options-block__item">
+                <input type="checkbox" id="parking" name="parking" disabled="disabled" class="options-block__check"/>
+                <label for="parking" class="options-block__label">Парковка
+                </label>
               </li>
-              <li>
-                <input type="checkbox" id="wifi" name="wifi" checked>
-                <label for="wifi">Wi-Fi</label>
+              <li class="options-block__item">
+                <input type="checkbox" id="wifi" name="wifi" class="options-block__check"/>
+                <label for="wifi" class="options-block__label">Wi-Fi
+                </label>
               </li>
             </ul>
             <ul class="options-block">
-              <li>
+              <li class="options-block__item">
                 <h2 class="options-block__title">Тип жилья:
                 </h2>
               </li>
-              <li>
-                <input type="checkbox" id="hotel" name="hotel" checked>
-                <label for="hotel">Гостиница</label>
+              <li class="options-block__item">
+                <input type="checkbox" id="hotel" name="hotel" checked="checked" class="options-block__check"/>
+                <label for="hotel" class="options-block__label">Гостиница
+                </label>
               </li>
-              <li>
-                <input type="checkbox" id="motel" name="motel" checked>
-                <label for="motel">Мотель</label>
+              <li class="options-block__item">
+                <input type="checkbox" id="motel" name="motel" checked="checked" class="options-block__check"/>
+                <label for="motel" class="options-block__label">Мотель
+                </label>
               </li>
-              <li>
-                <input type="checkbox" id="apart" name="apart" checked>
-                <label for="apart">Апартаменты</label>
+              <li class="options-block__item">
+                <input type="checkbox" id="apart" name="apart" checked="checked" class="options-block__check"/>
+                <label for="apart" class="options-block__label">Апартаменты
+                </label>
               </li>
             </ul>
             <div class="price-night">
               <h2 class="price-night__title">Стоимость в сутки (р):
               </h2>
               <div class="price-night__from-to">
-                <div class="price-night__start">от<span id="start-value">0</span>
+                <div class="price-night__start">
+                  <input id="start-value" placeholder="от 0">
                 </div>
-                <div class="price-night__end">до<span id="end-value">3000</span>
+                <div class="price-night__end">
+                  <input id="end-value" placeholder="до 3000">
                 </div>
               </div>
               <div class="price-night__range">
-                <div class="price-night__range-bar">
-                </div><a class="price-night__range-slide price-night__range-slide--start">--start</a><a class="price-night__range-slide price-night__range-slide--end">--end</a>
+                <div class="price-night__scale">
+                  <div class="price-night__range-bar">
+                  </div>
+                </div>
+                <button class="price-night__toggle price-night__toggle--start">--start
+                </button>
+                <button class="price-night__toggle price-night__toggle--end">--end
+                </button>
+              </div>
+              <div class="price-night__btn-wrap">
+                <button class="price-night__show-btn">Показать<span class="price-night__btn-bg"></span>
+                </button>
               </div>
             </div>
           </form>
-          <div class="middle-filter">
-            <div class="middle-filter__found">Найдено:<span id="total-count">3</span>
-            </div>
-            <ul class="sort-filter">
-              <li class="sort-filter__item">Сортировка:
-              </li>
-              <li class="sort-filter__item sort-filter__item--active"><a href="#">по цене</a>
-              </li>
-              <li class="sort-filter__item"><a href="#">по типу</a>
-              </li>
-              <li class="sort-filter__item"><a href="#">по рейтингу</a>
-              </li>
-            </ul>
-            <ul class="middle-filter__order">
-              <li><a href="#">desc</a></li>
-              <li><a href="#">asc</a></li>
-            </ul>
+        </div>
+        <div class="middle-filter">
+          <div class="middle-filter__found">Найдено:<span id="total-count">3</span>
           </div>
-          <div class="filter-output">
-            <div class="hotel-item">
-              <div class="hotel-item__img"><img src="img/amara-resort&amp;spa.jpg" alt="hotelName">
+          <ul class="sort-filter">
+            <li class="sort-filter__item sort-filter__item--sort">Сортировка:
+            </li>
+            <li class="sort-filter__item sort-filter__item--active"><a href="#">по цене</a>
+            </li>
+            <li class="sort-filter__item"><a href="#">по типу</a>
+            </li>
+            <li class="sort-filter__item"><a href="#">по рейтингу</a>
+            </li>
+          </ul>
+          <ul class="middle-filter__order">
+            <li class="middle-filter__sort-btns middle-filter__sort-btns--active">
+              <button value=" desc" class="middle-filter__sort-btn middle-filter__sort-btn--up">
+              </button>
+            </li>
+            <li class="middle-filter__sort-bnts">
+              <button value="asc" class="middle-filter__sort-btn middle-filter__sort-btn--down">
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="filter-output">
+          <div class="hotel-item">
+            <div class="hotel-item__img"><img src="img/amara-resort&amp;spa.jpg" alt="hotelName">
+            </div>
+            <div class="hotel-item__descr"><a href="#" class="hotel-item__title">Amara Resort & Spa</a>
+              <div class="hotel-item__pricetype"><span class="hotel-item__type">Гостиница</span><span class="hotel-item__price">от 3500 р.</span>
               </div>
-              <div class="hotel-item__descr"><a href="#" class="hotel-item__title">Amara Resort & Spa</a>
-                <div class="hotel-item__type">Гостиница
-                </div>
-                <div class="hotel-item__price">от 3500 р.
-                </div>
-                <ul class="hotel-item__btn-block">
-                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-blue">Подробнее</a>
-                  </li>
-                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-broun">Забронировать</a>
-                  </li>
-                </ul>
+              <ul class="hotel-item__btn-block">
+                <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-blue">Подробнее</a>
+                </li>
+                <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-broun">Забронировать</a>
+                </li>
+              </ul>
+            </div>
+            <div class="hotel-item__rating">
+              <div class="hotel-item__rating-stars hotel-item__rating-stars--four">
               </div>
-              <div class="hotel-item__rating">
-                <div class="hotel-item__rating-stars hotel-item__rating-stars--four">
-                </div>
-                <div class="hotel-item__mark">Рейтинг:<span id="mark-val">8,5</span>
-                </div>
+              <div class="hotel-item__mark">Рейтинг:<span id="mark-val">8,5</span>
               </div>
             </div>
-            <div class="hotel-item">
-              <div class="hotel-item__img"><img src="img/desert-quail-inn.jpg" alt="hotelName">
+          </div>
+          <div class="hotel-item">
+            <div class="hotel-item__img"><img src="img/desert-quail-inn.jpg" alt="hotelName">
+            </div>
+            <div class="hotel-item__descr"><a href="#" class="hotel-item__title">Desert Quail Inn</a>
+              <div class="hotel-item__pricetype"><span class="hotel-item__type">Мотель</span><span class="hotel-item__price">от 2000 р.</span>
               </div>
-              <div class="hotel-item__descr"><a href="#" class="hotel-item__title">Desert Quail Inn</a>
-                <div class="hotel-item__type">Мотель
-                </div>
-                <div class="hotel-item__price">от 2000 р.
-                </div>
-                <ul class="hotel-item__btn-block">
-                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-blue">Подробнее</a>
-                  </li>
-                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-broun">Забронировать</a>
-                  </li>
-                </ul>
+              <ul class="hotel-item__btn-block">
+                <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-blue">Подробнее</a>
+                </li>
+                <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-broun">Забронировать</a>
+                </li>
+              </ul>
+            </div>
+            <div class="hotel-item__rating">
+              <div class="hotel-item__rating-stars hotel-item__rating-stars--two">
               </div>
-              <div class="hotel-item__rating">
-                <div class="hotel-item__rating-stars hotel-item__rating-stars--two">
-                </div>
-                <div class="hotel-item__mark">Рейтинг:<span id="mark-val">8,9</span>
-                </div>
+              <div class="hotel-item__mark">Рейтинг:<span id="mark-val">8,9</span>
               </div>
             </div>
-            <div class="hotel-item">
-              <div class="hotel-item__img"><img src="img/villas-at-poco-diablo.jpg" alt="hotelName">
+          </div>
+          <div class="hotel-item">
+            <div class="hotel-item__img"><img src="img/villas-at-poco-diablo.jpg" alt="hotelName">
+            </div>
+            <div class="hotel-item__descr"><a href="#" class="hotel-item__title">Villas at Poco Diablo</a>
+              <div class="hotel-item__pricetype"><span class="hotel-item__type">Апартаменты</span><span class="hotel-item__price">от 4000 р.</span>
               </div>
-              <div class="hotel-item__descr"><a href="#" class="hotel-item__title">Villas at Poco Diablo</a>
-                <div class="hotel-item__type">Апартаменты
-                </div>
-                <div class="hotel-item__price">от 4000 р.
-                </div>
-                <ul class="hotel-item__btn-block">
-                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-blue">Подробнее</a>
-                  </li>
-                  <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-broun">Забронировать</a>
-                  </li>
-                </ul>
+              <ul class="hotel-item__btn-block">
+                <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-blue">Подробнее</a>
+                </li>
+                <li><a href="#" class="hotel-item__btn hotel-item__btn--bg-broun">Забронировать</a>
+                </li>
+              </ul>
+            </div>
+            <div class="hotel-item__rating">
+              <div class="hotel-item__rating-stars hotel-item__rating-stars--three">
               </div>
-              <div class="hotel-item__rating">
-                <div class="hotel-item__rating-stars hotel-item__rating-stars--three">
-                </div>
-                <div class="hotel-item__mark">Рейтинг:<span id="mark-val">9,2</span>
-                </div>
+              <div class="hotel-item__mark">Рейтинг:<span id="mark-val">9,2</span>
               </div>
             </div>
           </div>
@@ -184,6 +202,7 @@
           </div>
         </div>
       </footer>
+      <script href="js/main.js"></script>
     </div>
   </body>
 </html>

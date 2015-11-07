@@ -1,0 +1,369 @@
+.hotel-filter {
+  padding 30px 6%
+  border-bottom 1px solid transparent
+  background url(../img/bg-filter.jpg) 0 0 no-repeat
+}
+.hotel-filter__parameters {
+  clearfix()
+}
+.options-block {
+  list-style-type none
+  margin 0
+  padding 0
+  float left
+  width 252px
+  &__item {
+    margin-bottom 23px
+  }
+  &__title {
+    margin-bottom 30px
+    font-size 16px
+    color #fff
+  }
+  &__check {
+    display none
+  }
+  &__label {
+    position relative
+    padding-left 40px
+    font-size 14px
+    color #fff
+    &:hover:before {
+      color #fefefe
+    }
+    &:before {
+      position absolute
+      left 0
+      top -12px
+      content: '\2610';
+      font-size 26px
+      border-radius 4px
+      color #b5b5b5
+    }
+  }
+  &__check:checked + &__label:before {
+    content: '\2611';
+  }
+  &__check:disabled + &__label:before {
+    content: '\2611';
+    color #6a6a6a
+  }
+}
+
+.hotel-filter .price-night {
+float right
+width 328px
+}
+.price-night {
+  &__from-to {
+  clearfix()
+  }
+  &__title {
+    margin-bottom 10px
+    font-size 16px
+    color #fff
+  }
+  &__from-to {
+    margin-bottom 10px
+  }
+  &__start,
+    &__end {
+      position relative
+      width 50%
+      float left
+      input {
+        width 100%
+        padding 8px
+        border 2px solid #fff
+        background-color transparent
+        font-size 14px
+        color #fff
+        text-align center
+        box-sizing border-box
+        placeholder-color(#fff)
+      }
+    }
+    &__start {
+      input {
+        position relative
+        border-right none
+      }
+      &:after {
+        content ''
+        position absolute
+        top 7px
+        bottom 7px
+        right 0
+        width 2px
+        background #fff
+      }
+    }
+    &__end {
+      input {
+        padding-left 10px
+        border-left none
+      }
+    }
+    &__range {
+      position relative
+      margin-bottom 22px
+      height 24px
+    }
+    &__scale {
+      position absolute
+      top 12px
+      margin-top -1px
+      height 2px
+      width 100%
+      background rgba(255,255,255,.3)
+    }
+    &__range-bar {
+      width: 70%;
+      height: 2px;
+      background: #fff
+    }
+
+    &__toggle {
+      border 1px solid transparent
+      font-size 0
+      line-height 0
+      position absolute
+      width 21px
+      height 21px
+      border-radius 50%
+      background #fff
+      box-shadow 0 1px 0 lighten(#000,86%)
+      &:after {
+        content ''
+        width 4px
+        height 4px
+        display inline-block
+        background #ababab
+        transition background $anim_duration
+      }
+      &:hover:after {
+        background #1c4f80
+      }
+      &--end {
+        left 220px
+      }
+    }
+    &__btn-wrap {
+      text-align center
+    }
+    &__show-btn {
+      position relative
+      padding 8px 34px
+      font-size 14px
+      color #fff
+      background-color transparent
+      border 2px solid #fff
+      text-transform uppercase
+      z-index 1
+      &:hover {
+        color #000
+      }
+      &:after {
+        content: ''
+        position absolute
+        left 0
+        top 0
+        height 100%
+        width 0%
+        background #fff
+        transition all $anim_duration
+        z-index -1
+      }
+    }
+    &__show-btn:hover:after {
+      width 100%
+    }
+
+}
+
+.middle-filter {
+  clearfix()
+  border-bottom 1px solid #e5e5e5
+  padding 30px 6%
+  &__found {
+    float left
+    margin-right 50px
+    font-size 21px
+    font-weight bold
+  }
+  .sort-filter {
+    float left
+    nolist()
+    &__item {
+      margin-right 33px
+      font-size 12px
+      &--sort {
+        margin-right 40px
+      }
+      a {
+        color rgba(0,0,0,.3)
+        border-bottom 1px dotted #81b3d2
+        text-decoration none
+        &:hover {
+          color #81b3d2
+        }
+        &:active {
+          color #000
+          border-bottom none
+        }
+      }
+      &--active {
+        a {
+          color #81b3d2
+          border none
+          &:hover {
+            color @color
+            cursor default
+          }
+          &:active {
+            color @color
+            border-bottom none
+          }
+        }
+      }
+    }
+  }
+  &__order {
+    nolist()
+    float right
+  }
+  &__sort-btn {
+      background none
+      outline 1px solid transparent
+      border none
+      font-size 0
+      line-height 0
+      &:after {
+        content: '\25b2';
+        display inline-block
+        font-size 23px
+        color #ccc
+        transition color $anim_duration
+      }
+      &:hover:after {
+        color #000
+      }
+      &:active:after {
+        color #81b3d2
+      }
+
+      &--down:after {
+        content: '\25bc';
+      }
+    }
+  &__sort-btns--active > &__sort-btn:after{
+        color #81b3d2
+        cursor default
+    }
+}
+
+.filter-output {
+
+}
+
+.hotel-item {
+  clearfix()
+  padding 30px 6%
+  border-bottom 1px solid #e5e5e5
+  &__img {
+    float left
+    margin-right 30px
+    min-width 135px
+    height 100%
+  }
+  &__descr {
+    float left
+    width 363px
+  }
+  &__title {
+    display inline-block
+    vertical-align top
+    margin-bottom 14px
+    font-size 21px
+    font-weight bold
+    color #000
+    text-decoration none
+    transition color $anim_duration
+    &:hover {
+      color #81b3d2
+    }
+    &:active {
+      color #000
+      opacity .3
+    }
+  }
+  &__pricetype {
+    margin-bottom 16px
+  }
+  &__type,
+  &__price {
+    display inline-block
+    margin-right 40px
+    color #333
+    font-size 14px
+  }
+  &__btn-block {
+    nolist()
+  }
+  &__btn {
+    padding 6px 16px
+    font-size 14px
+    font-weight bold
+    color #fff
+    background #0c0c0c
+    text-decoration none
+    transition all $anim_duration
+    &--bg-blue {
+      background #81b3d2
+      &:hover {
+        background #669ec0
+      }
+      &:active {
+        background #5496bd
+        color rgba(255,255,255,.3)
+      }
+    }
+    &--bg-broun {
+      background #766357
+      &:hover {
+        background #604e43
+      }
+      &:active {
+        background #503e33
+        color rgba(255,255,255,.3)
+      }
+    }
+  }
+  &__rating {
+    float right
+    width 240px
+    text-align right
+  }
+  &__mark {
+    display inline-block
+    padding 2px 16px
+    color #666
+    background #f2f2f2
+  }
+  &__rating-stars {
+    margin-left auto
+    margin-bottom 47px
+    width 88px
+    height 17px
+    background-image url(../img/icon/stars.png)
+    &--two {
+      width 40px
+    }
+    &--three {
+      width 65px
+    }
+    &--one {
+      width 17px
+    }
+  }
+}

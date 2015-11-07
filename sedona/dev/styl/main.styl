@@ -83,6 +83,7 @@
 @import 'mixins/_utilities.styl'
 $font__PtSans = 'PT Sans', sans-serif, Helvetica, Arial
 $base__color = #000
+$anim_duration = .3s
 //normalize
 normalize-css()
 //common
@@ -102,16 +103,26 @@ h2
 .clearfix {
   clearfix()
 }
+.wrap {
+  padding 0 6%
+}
+
 .container {
   min-width 768px
   max-width 1200px
   margin: 0 auto;
+  background #fff
   box-shadow 0 5px 15px lighten(#000,80%)
+  box-sizing border-box
 }
   /*
   * Header
   */
-
+.main-header {
+  clearfix()
+  margin-bottom -15px
+  overflow hidden
+}
 .nav__list {
   // justify()
   height 55px
@@ -131,6 +142,23 @@ h2
   line-height: 55px;
   color $base__color
   text-decoration none
+  transition color $anim_duration
+  &:hover {
+    color #81b3d2
+  }
+  &:active {
+    color rgba(0,0,0,.3)
+  }
+}
+.nav__item--active .nav__link {
+  color #766357
+  &:hover {
+    color #604e43
+  }
+  &:active {
+    color #766357
+    opacity .3
+  }
 }
 .nav__link--logo {
   position relative
@@ -313,9 +341,11 @@ h2
   font-weight bold
   line-height 26px
   text-transform uppercase
+  text-decoration none
+  text-align center
 }
   .search-form__inner {
-    // display none
+      display none
       position absolute
       top 100%
       width 100%
@@ -324,6 +354,9 @@ h2
       box-sizing border-box
       box-shadow 0 7px 15px lighten(#000,80%)
       z-index 2
+  }
+  .search-form__inner.show {
+    display block
   }
   .search-form__date {
     margin-bottom 30px
@@ -340,12 +373,21 @@ h2
         display inline-block
         width 347px
         padding 8px 12px
-        border 1px solid transparent
+        border 2px solid transparent
+        outline 1px solid transparent
         background #f2f2f2
         font-size 14px
         font-weight bold
         color #000
         box-sizing border-box
+        transition all $anim_duration
+        &:hover {
+          background #ebebeb
+        }
+        &:focus {
+          border-color #e5e5e5
+          background none
+        }
       }
     .search-form__age label {
       float left
@@ -391,10 +433,19 @@ h2
     .input-number__btn {
       padding 8px 12px
       border 1px solid transparent
+      outline 1px solid transparent
       background #f2f2f2
-      font-size 14px
+      font-size 18px
+      line-height 18px
       font-weight bold
       color #a9a9a9
+      transition color $anim_duration
+      &:hover {
+        color #000
+      }
+      &:active {
+        color #81b3d2
+      }
     }
    .input-number__btn--minus {
     left 0
@@ -411,9 +462,18 @@ h2
   font-weight bold
   line-height 26px
   border 1px solid transparent
+  outline 1px solid transparent
   text-transform uppercase
   background #81b3d2
   color #fff
+  transition all $anim_duration
+  &:hover {
+    background #669ec0
+  }
+  &:active {
+    background #5496bd
+    color rgba(255,255,255,.3)
+  }
 }
 
 .main__bg-map {
@@ -424,6 +484,10 @@ h2
   background: url(../img/bg-map.jpg) 0 100% no-repeat;
   z-index: 1;
 }
+/*
+hotels
+*/
+@import 'hotels.styl';
 /*
 * Footer block
 */
@@ -436,7 +500,9 @@ h2
 }
 
 .main-footer__item {
-  float left
+  display inline-block
+  margin-right -4px
+  vertical-align middle
   width (100/3)%
   text-align center
   box-sizing border-box
@@ -446,7 +512,6 @@ h2
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
-  padding-top: 10px;
   text-decoration none
   color #000
 }
@@ -471,7 +536,18 @@ h2
 .social-block__btn--yt {
     background-position: -451px -86px;
 }
-
+.social-block__btn:active {
+  background-color:rgba(84,150,189,1);
+}
+.social-block__btn--tw:active {
+  background-position:-451px 15px;
+}
+.social-block__btn--fb:active {
+  background-position:-453px -18px;
+}
+.social-block__btn--yt:active {
+  background-position:-451px -51px;
+}
 .copyright-block__create_link {
   display inline-block
   vertical-align: middle;
@@ -480,6 +556,12 @@ h2
   width: 113px;
   height: 39px;
   background: url(../img/htmlacademy.png) no-repeat;
+  &:hover {
+    background-position 0 -48px
+  }
+  &:active {
+    background-position 0 -95px
+  }
 }
 .copyright-block__create-by {
   font-weight bold
