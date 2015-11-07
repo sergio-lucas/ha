@@ -87,6 +87,16 @@ $anim_duration = .3s
 //normalize
 normalize-css()
 //common
+@font-face {
+  font-family: 'symbols-sedona';
+  src: url('../font/symbols-sedona.eot?60737633');
+  src: url('../font/symbols-sedona.eot?60737633#iefix') format('embedded-opentype'),
+       url('../font/symbols-sedona.woff?60737633') format('woff'),
+       url('../font/symbols-sedona.ttf?60737633') format('truetype'),
+       url('../font/symbols-sedona.svg?60737633#symbols-sedona') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 body
   font normal 14px/normal $font__PtSans
   color $base__color
@@ -565,4 +575,12 @@ hotels
 }
 .copyright-block__create-by {
   font-weight bold
+}
+@media screen and (max-width:965px) {
+  .options-block {
+     width (100/3) %
+  }
+  .hotel-filter .price-night {
+    width (100/3) %
+  }
 }

@@ -184,6 +184,13 @@ td,
 th {
   padding: 0;
 }
+@font-face {
+  font-family: 'symbols-sedona';
+  src: url("../font/symbols-sedona.eot?60737633");
+  src: url("../font/symbols-sedona.eot?60737633#iefix") format('embedded-opentype'), url("../font/symbols-sedona.woff?60737633") format('woff'), url("../font/symbols-sedona.ttf?60737633") format('truetype'), url("../font/symbols-sedona.svg?60737633#symbols-sedona") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   font: normal 14px/normal 'PT Sans', sans-serif, Helvetica, Arial;
   color: #000;
@@ -692,21 +699,34 @@ hotels
 }
 .options-block__label {
   position: relative;
-  padding-left: 40px;
   font-size: 14px;
   color: #fff;
+  display: inline-block;
+  vertical-align: middle;
 }
 .options-block__label:hover:before {
   color: #fefefe;
 }
 .options-block__label:before {
-  position: absolute;
   left: 0;
   top: -12px;
   content: '\2610';
   font-size: 26px;
   border-radius: 4px;
   color: #b5b5b5;
+  font-family: "symbols-sedona";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  font-variant: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 14px;
+  text-align: center;
+  text-transform: none;
+  line-height: 1em;
+  vertical-align: middle;
 }
 .options-block__check:checked + .options-block__label:before {
   content: '\2611';
@@ -1176,4 +1196,12 @@ hotels
 }
 .copyright-block__create-by {
   font-weight: bold;
+}
+@media screen and (max-width: 965px) {
+  .options-block {
+    width: 33.333333333333336%;
+  }
+  .hotel-filter .price-night {
+    width: 33.333333333333336%;
+  }
 }

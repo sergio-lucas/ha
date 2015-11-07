@@ -25,20 +25,33 @@
   }
   &__label {
     position relative
-    padding-left 40px
     font-size 14px
     color #fff
+    display inline-block
+    vertical-align middle
     &:hover:before {
       color #fefefe
     }
     &:before {
-      position absolute
       left 0
       top -12px
       content: '\2610';
       font-size 26px
       border-radius 4px
       color #b5b5b5
+      font-family: "symbols-sedona";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      font-variant: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: 14px;
+      text-align: center;
+      text-transform: none;
+      line-height: 1em;
+      vertical-align middle
     }
   }
   &__check:checked + &__label:before {
