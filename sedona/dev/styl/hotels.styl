@@ -94,6 +94,9 @@ width 328px
         text-align center
         box-sizing border-box
         placeholder-color(#fff)
+        &:focus {
+          outline: 1px solid transparent;
+        }
       }
     }
     &__start {
@@ -157,6 +160,9 @@ width 328px
       &:hover:after {
         background #1c4f80
       }
+      &:focus {
+        outline: 1px solid transparent;
+      }
       &--end {
         left 220px
       }
@@ -186,6 +192,9 @@ width 328px
         background #fff
         transition all $anim_duration
         z-index -1
+      }
+      &:focus {
+        outline: 1px solid transparent;
       }
     }
     &__show-btn:hover:after {

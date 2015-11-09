@@ -603,6 +603,9 @@ h2 {
 .input-number__value::-webkit-input-placeholder {
   color: #000;
 }
+.input-number__value:focus {
+  outline: 1px solid transparent;
+}
 .input-number__btn {
   padding: 8px 12px;
   border: 1px solid transparent;
@@ -787,6 +790,10 @@ hotels
 .price-night__end input::-webkit-input-placeholder {
   color: #fff;
 }
+.price-night__start input:focus,
+.price-night__end input:focus {
+  outline: 1px solid transparent;
+}
 .price-night__start input {
   position: relative;
   border-right: none;
@@ -849,6 +856,9 @@ hotels
 .price-night__toggle:hover:after {
   background: #1c4f80;
 }
+.price-night__toggle:focus {
+  outline: 1px solid transparent;
+}
 .price-night__toggle--end {
   left: 220px;
 }
@@ -882,6 +892,9 @@ hotels
   -ms-transition: all 0.3s;
   transition: all 0.3s;
   z-index: -1;
+}
+.price-night__show-btn:focus {
+  outline: 1px solid transparent;
 }
 .price-night__show-btn:hover:after {
   width: 100%;
@@ -1198,10 +1211,21 @@ hotels
   font-weight: bold;
 }
 @media screen and (max-width: 965px) {
+  .feature-block__item {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .feature-list__item {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
   .options-block {
     width: 33.333333333333336%;
   }
   .hotel-filter .price-night {
     width: 33.333333333333336%;
+  }
+  .hotel-item__rating {
+    width: 150px;
   }
 }

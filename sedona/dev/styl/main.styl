@@ -440,6 +440,9 @@ h2
       color #000
       placeholder-color(#000)
     }
+    .input-number__value:focus {
+      outline: 1px solid transparent;
+    }
     .input-number__btn {
       padding 8px 12px
       border 1px solid transparent
@@ -577,10 +580,21 @@ hotels
   font-weight bold
 }
 @media screen and (max-width:965px) {
+  .feature-block__item {
+    padding-left 30px
+    padding-right 30px
+  }
+  .feature-list__item {
+    padding-left 30px
+    padding-right 30px
+  }
   .options-block {
      width (100/3) %
   }
   .hotel-filter .price-night {
     width (100/3) %
+  }
+  .hotel-item__rating {
+    width 150px
   }
 }
