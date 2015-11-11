@@ -446,6 +446,13 @@ h2 {
 .feature-list--gray {
   background: #eee;
 }
+.feature-list--gray .feature-list__item {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.feature-list--gray .feature-list__number {
+  margin-bottom: 25px;
+}
 .index-search {
   position: relative;
   width: 576px;
@@ -483,7 +490,9 @@ h2 {
   text-align: center;
 }
 .search-form__inner {
-  display: none;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
   position: absolute;
   top: 100%;
   width: 100%;
@@ -495,9 +504,16 @@ h2 {
   -webkit-box-shadow: 0 7px 15px #ccc;
   box-shadow: 0 7px 15px #ccc;
   z-index: 2;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 .search-form__inner.show {
-  display: block;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 .search-form__date {
   margin-bottom: 30px;
@@ -663,13 +679,14 @@ h2 {
   width: 100%;
   height: 592px;
   margin-bottom: -118px;
+  background: url("../img/bg-map.jpg") 0 100% no-repeat;
   z-index: 1;
 }
 /*
 hotels
 */
 .hotel-filter {
-  padding: 30px 6%;
+  padding: 15px 6% 20px;
   border-bottom: 1px solid transparent;
   background: url("../img/bg-filter.jpg") 0 0 no-repeat;
 }
@@ -691,8 +708,11 @@ hotels
 .options-block__item {
   margin-bottom: 23px;
 }
+.options-block__item:last-child {
+  margin: 0;
+}
 .options-block__title {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 16px;
   color: #fff;
 }
@@ -705,6 +725,7 @@ hotels
   color: #fff;
   display: inline-block;
   vertical-align: middle;
+  cursor: pointer;
 }
 .options-block__label:hover:before {
   color: #fefefe;
@@ -899,8 +920,13 @@ hotels
   width: 100%;
 }
 .middle-filter {
+  display: table;
+  width: 100%;
   border-bottom: 1px solid #e5e5e5;
   padding: 30px 6%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .middle-filter:before,
 .middle-filter:after {
@@ -911,16 +937,18 @@ hotels
   clear: both;
 }
 .middle-filter__found {
-  float: left;
-  margin-right: 50px;
   font-size: 21px;
   font-weight: bold;
+  display: table-cell;
+  vertical-align: bottom;
 }
 .middle-filter .sort-filter {
-  float: left;
+  display: table-cell;
+  vertical-align: bottom;
   padding: 0;
   margin: 0;
   list-style: none;
+  padding-right: 155px;
 }
 .middle-filter .sort-filter li {
   display: inline-block;
@@ -960,22 +988,29 @@ hotels
   padding: 0;
   margin: 0;
   list-style: none;
-  float: right;
+  display: table-cell;
+  text-align: right;
+  vertical-align: bottom;
 }
 .middle-filter__order li {
   display: inline-block;
+}
+.middle-filter__sort-btns {
+  margin-right: -3px;
+}
+.middle-filter__sort-btns:last-child {
+  margin: 0;
 }
 .middle-filter__sort-btn {
   background: none;
   outline: 1px solid transparent;
   border: none;
-  font-size: 0;
-  line-height: 0;
 }
 .middle-filter__sort-btn:after {
   content: '\25b2';
   display: inline-block;
-  font-size: 23px;
+  font-size: 14px;
+  line-height: 7px;
   color: #ccc;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
@@ -1126,7 +1161,7 @@ hotels
   position: relative;
   background-color: rgba(255,255,255,0.9);
   z-index: 10;
-  padding: 36px;
+  padding: 36px 0;
 }
 .main-footer:before,
 .main-footer:after {
@@ -1207,7 +1242,7 @@ hotels
   background-position: 0 -95px;
 }
 .copyright-block__create-by {
-  font-weight: bold;
+  font-weight: 400;
 }
 @media screen and (max-width: 965px) {
   .feature-block__item {

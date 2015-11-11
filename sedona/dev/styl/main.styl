@@ -316,6 +316,13 @@ h2
 
 .feature-list--gray {
   background #eee
+  .feature-list__item {
+    padding-top 30px
+    padding-bottom 50px
+  }
+  .feature-list__number {
+    margin-bottom: 25px;
+}
 }
 
 .index-search {
@@ -355,7 +362,7 @@ h2
   text-align center
 }
   .search-form__inner {
-      display none
+      opacity 0
       position absolute
       top 100%
       width 100%
@@ -364,9 +371,10 @@ h2
       box-sizing border-box
       box-shadow 0 7px 15px lighten(#000,80%)
       z-index 2
+      transition opacity .5s
   }
   .search-form__inner.show {
-    display block
+    opacity 1
   }
   .search-form__date {
     margin-bottom 30px
@@ -494,7 +502,7 @@ h2
   width: 100%;
   height: 592px;
   margin-bottom: -118px;
-  // background: url(../img/bg-map.jpg) 0 100% no-repeat;
+  background: url(../img/bg-map.jpg) 0 100% no-repeat;
   z-index: 1;
 }
 // #map { height: 100%; }
@@ -510,7 +518,7 @@ hotels
   position: relative;
   background-color: rgba(255,255,255,.9);
   z-index: 10;
-  padding: 36px;
+  padding: 36px 0;
 }
 
 .main-footer__item {
@@ -578,7 +586,7 @@ hotels
   }
 }
 .copyright-block__create-by {
-  font-weight bold
+  font-weight 400
 }
 @media screen and (max-width:965px) {
   .feature-block__item {
