@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "gulp-jade": "^1.1.0"
+    "gulp-jade": "^1.1.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-shorthand": "^1.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-sprite-generator": "^0.2.3",
+    "gulp-tinypng": "^1.0.2",
+    "gulp.spritesmith": "^4.2.4"
   },
   "devDependencies": {
     "browser-sync": "^2.9.3",
