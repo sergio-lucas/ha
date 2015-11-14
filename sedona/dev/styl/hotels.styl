@@ -208,26 +208,22 @@ width 328px
 }
 
 .middle-filter {
-  clearfix()
-  display table
-  width 100%
+  display flex
+  justify-content: space-between
+  align-items: baseline
   border-bottom 1px solid #e5e5e5
   padding 30px 6%
   box-sizing border-box
   &__found {
-    // float left
-    // margin-right 50px
     font-size 21px
     font-weight bold
-    display table-cell
     vertical-align bottom
   }
   .sort-filter {
-    // float left
-    display table-cell
+    flex 1 0 auto
     vertical-align bottom
     nolist()
-    padding-right: 155px;
+    padding-left: 50px;
     &__item {
       margin-right 33px
       font-size 12px
@@ -264,8 +260,6 @@ width 328px
   }
   &__order {
     nolist()
-    // float right
-    display table-cell
     text-align right
     vertical-align bottom
   }

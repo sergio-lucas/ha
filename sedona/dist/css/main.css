@@ -923,35 +923,48 @@ hotels
   width: 100%;
 }
 .middle-filter {
-  display: table;
-  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: baseline;
+  -moz-box-align: baseline;
+  -o-box-align: baseline;
+  -ms-flex-align: baseline;
+  -webkit-align-items: baseline;
+  align-items: baseline;
   border-bottom: 1px solid #e5e5e5;
   padding: 30px 6%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.middle-filter:before,
-.middle-filter:after {
-  content: " ";
-  display: table;
-}
-.middle-filter:after {
-  clear: both;
-}
 .middle-filter__found {
   font-size: 21px;
   font-weight: bold;
-  display: table-cell;
   vertical-align: bottom;
 }
 .middle-filter .sort-filter {
-  display: table-cell;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
   vertical-align: bottom;
   padding: 0;
   margin: 0;
   list-style: none;
-  padding-right: 155px;
+  padding-left: 50px;
 }
 .middle-filter .sort-filter li {
   display: inline-block;
@@ -991,7 +1004,6 @@ hotels
   padding: 0;
   margin: 0;
   list-style: none;
-  display: table-cell;
   text-align: right;
   vertical-align: bottom;
 }
