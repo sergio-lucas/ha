@@ -423,7 +423,7 @@ h2 {
 .feature-block__item {
   width: 34%;
   height: 100%;
-  padding-top: 50px;
+  padding: 50px 5% 40px 5%;
   text-align: center;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -446,7 +446,8 @@ h2 {
   color: #fff;
 }
 .feature-block__title {
-  margin-top: 0;
+  max-width: 200px;
+  margin: 0 auto;
   margin-bottom: 25px;
   font-size: 21px;
   font-weight: bold;
@@ -459,9 +460,16 @@ h2 {
   line-height: 21px;
 }
 .feature-block {
-  height: 256px;
   position: relative;
   background-repeat: no-repeat;
+}
+.feature-block:before,
+.feature-block:after {
+  content: " ";
+  display: table;
+}
+.feature-block:after {
+  clear: both;
 }
 .feature-block--bg-feature1 {
   background-image: url("../img/feauruees-1.jpg");
@@ -1379,8 +1387,8 @@ hotels
 }
 @media screen and (max-width: 965px) {
   .feature-block__item {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 2%;
+    padding-right: 2%;
   }
   .feature-list__item {
     padding-left: 40px;
