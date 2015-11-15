@@ -1,7 +1,7 @@
 .hotel-filter {
   padding 15px 6% 20px
   border-bottom 1px solid transparent
-  background url(../img/bg-filter.jpg) 0 0 no-repeat
+  background #6081a0 url(../img/bg-filter.jpg) 0 0 no-repeat
 }
 .hotel-filter__parameters {
   clearfix()
@@ -152,12 +152,14 @@ width 328px
       height 21px
       border-radius 50%
       background #fff
-      box-shadow 0 1px 0 lighten(#000,86%)
+      box-shadow 0 1px 0 rgba(0,0,0,.14)
       &:after {
         content ''
         width 4px
         height 4px
         display inline-block
+        vertical-align middle
+        border-radius 50%
         background #ababab
         transition background $anim_duration
       }
@@ -219,12 +221,12 @@ width 328px
     font-weight bold
     vertical-align bottom
   }
-  .sort-filter {
+  &__sort {
     flex 1 0 auto
     vertical-align bottom
     nolist()
     padding-left: 50px;
-    &__item {
+    &-item {
       margin-right 33px
       font-size 12px
       &--sort {
@@ -276,6 +278,7 @@ width 328px
       &:after {
         content: '\25b2';
         display inline-block
+        vertical-align middle
         font-size 14px
         line-height 7px
         color #ccc
@@ -306,11 +309,16 @@ width 328px
   clearfix()
   padding 30px 6%
   border-bottom 1px solid #e5e5e5
-  &__img {
+  &__img-wrap {
     float left
     margin-right 30px
-    min-width 135px
-    height 100%
+    max-width 135px
+    max-height 90px
+    overflow hidden
+  }
+  &__img {
+    max-width 100%
+    height auto
   }
   &__descr {
     float left
@@ -339,6 +347,7 @@ width 328px
   &__type,
   &__price {
     display inline-block
+    vertical-align middle
     margin-right 40px
     color #333
     font-size 14px
@@ -382,6 +391,7 @@ width 328px
   }
   &__mark {
     display inline-block
+    vertical-align middle
     padding 2px 16px
     color #666
     background #f2f2f2
@@ -392,7 +402,7 @@ width 328px
     width 88px
     height 17px
     background-image url(../img/sprite.png)
-    background-position -119px 39px
+    background-position -159px -132px
     &--two {
       width 40px
     }

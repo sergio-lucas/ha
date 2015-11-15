@@ -81,12 +81,16 @@
 // variables//
 //
 @import 'mixins/_utilities.styl'
-$font__PtSans = 'PT Sans', sans-serif, Helvetica, Arial
+$font__PtSans = 'PT Sans', Helvetica, Arial, sans-serif
 $base__color = #000
 $anim_duration = .3s
 //normalize
 normalize-css()
 //common
+/*
+hotels
+*/
+@import 'fonts.styl';
 @font-face {
   font-family: 'symbols-sedona';
   src: url('../font/symbols-sedona.eot?60737633');
@@ -241,7 +245,8 @@ h2
 .feature-list {
   clearfix()
 }
-  .feature-list__ico {
+  .feature-list__item:before {
+    content ''
     display block
     margin 0 auto
     height 75px
@@ -249,21 +254,28 @@ h2
     background-repeat no-repeat
     background-position 50%
   }
-    .feature-list__ico--home {
-      background-position: -158px 0px;
+    .feature-list__item--home:before {
+      background-position: 0 0;
       width: 75px;
     }
-    .feature-list__ico--eat {
-      background-position: -158px -77px;
+    .feature-list__item--eat:before {
+      background-position: -80px 0px;
       width: 74px;
     }
-    .feature-list__ico--gift {
-      background-position: -238px 0px;
+    .feature-list__item--gift:before {
+      background-position: 0 -77px;
       width: 64px;
     }
+  .feature-list__title {
+    width 155px
+    margin 0.83em auto
+  }
   .feature-list__descr {
     font-size 14px
     color #333
+    span {
+      white-space nowrap
+    }
   }
 
 .feature-block__item {
@@ -322,6 +334,9 @@ h2
   .feature-list__item {
     padding-top 30px
     padding-bottom 50px
+    &:before {
+      display none
+    }
   }
   .feature-list__number {
     margin-bottom: 25px;
@@ -365,6 +380,7 @@ h2
   text-align center
 }
   .search-form__inner {
+      visibility hidden
       opacity 0
       position absolute
       top 100%
@@ -377,6 +393,7 @@ h2
       transition opacity .5s
   }
   .search-form__inner.show {
+    visibility visible
     opacity 1
   }
   .search-form__date {
@@ -384,15 +401,22 @@ h2
   }
     .search-form__date label {
       display inline-block
+      vertical-align middle
       min-width 111px
       font-size 14px
       line-height 26px
       font-weight bold
       box-sizing border-box
     }
+    .search-form__input-wrap {
+      position relative
+      display inline-block
+      vertical-align middle
+      width 350px
+      overflow-x hidden
+    }
       .search-form__date input {
-        display inline-block
-        width 347px
+        width 100%
         padding 8px 12px
         border 2px solid transparent
         outline 1px solid transparent
@@ -402,19 +426,42 @@ h2
         color #000
         box-sizing border-box
         transition all $anim_duration
+        &::-webkit-inner-spin-button,
+        &::-webkit-calendar-picker-indicator,
+        &::-webkit-clear-button {
+          display: none;
+          -webkit-appearance: none;
+        }
         &:hover {
           background #ebebeb
+          +.search-form__ico-date {
+                      background-position -277px -39px
+                    }
         }
         &:focus {
           border-color #e5e5e5
           background none
+          +.search-form__ico-date {
+                      background-position -277px -77px
+                    }
         }
       }
+    .search-form__ico-date {
+      position absolute
+      right 8px
+      top 50%
+      margin-top -12px
+      display inline-block
+      vertical-align middle
+      width 22px
+      height 22px
+      background url(../img/sprite.png) -277px 0px;
+    }
     .search-form__age label {
-      float left
       font-size 14px
       line-height 26px
       font-weight bold
+      justify-child(14px,middle)
     }
   .search-form__age {
     clearfix()
@@ -424,16 +471,17 @@ h2
     clearfix()
     width 230px
     float left
+    justify()
   }
-  .search-form__right {
+  .search-form__left--right {
     width 180px
     float right
   }
 
   .input-number {
     position relative
-    float right
     width 114px
+    justify-child(16px,middle)
   }
   .input-number__btn {
   position absolute
@@ -542,37 +590,54 @@ hotels
 }
 .social-block {
   nolist()
+  margin-right -4px
 }
 .social-block__btn {
+  position relative
   display inline-block
   vertical-align: top;
   font-size 0
-  background: #81b3d2 url(../img/sprite.png) no-repeat;
+  background: #81b3d2;
   width: 46px;
   height: 48px;
   margin-right: 5px;
+  transition background $anim_duration
   &:hover {
     background-color #669ec0
   }
-}
-  .social-block__btn--tw {
-    background-position: 0 0;
+  &:active {
+    background #5496bd
+    &:before {
+      opacity .3
+    }
   }
-  .social-block__btn--tw:active {
-    background-position: 0 -112px;
+  &:before {
+    content: ''
+    position absolute
+    display inline-block
+    vertical-align middle
+    top 50%
+    margin-top -8px
+    left 50%
+    margin-left -10px
+    width 20px
+    height 16px
+    background: url(../img/sprite.png) no-repeat;
   }
-.social-block__btn--fb {
-  background-position: -54px 0;
 }
-.social-block__btn--fb:active {
-  background-position: -54px -112px;
-}
-.social-block__btn--yt {
-    background-position: -106px 0;
-}
-.social-block__btn--yt:active {
-  background-position: -106px -112px;
-}
+  .social-block__btn--tw:before {
+    background-position: 2px -161px;
+  }
+  .social-block__btn--fb:before {
+    width 10px
+    height 20px
+    margin-left -5px
+    margin-top -10px
+    background-position: -56px -158px;
+  }
+  .social-block__btn--yt:before {
+      background-position: -103px -161px;
+  }
 
 .copyright-block__create_link {
   display inline-block
@@ -582,12 +647,12 @@ hotels
   width: 113px;
   height: 39px;
   background: url(../img/sprite.png) no-repeat;
-  background-position 0px -211px
+  background-position -159px -88px
   &:hover {
-    background-position -118px -167px
+    background-position -159px -44px
   }
   &:active {
-    background-position 0px -167px
+    background-position -159px 0px
   }
 }
 .copyright-block__create-by {
@@ -599,14 +664,17 @@ hotels
     padding-right 30px
   }
   .feature-list__item {
-    padding-left 30px
-    padding-right 30px
+    padding-left 40px
+    padding-right 40px
   }
   .options-block {
      width (100/3) %
   }
   .hotel-filter .price-night {
     width (100/3) %
+  }
+  .price-night__toggle--end {
+    left 70%
   }
   .hotel-item__rating {
     width 150px

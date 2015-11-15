@@ -65,13 +65,13 @@ justify()
 
 // Применяется к inline-block элементам, вложенным в родителя с применённым justify.
 // Следует указать нужный размер шрифта в блоках, так как в justify он сбрасывается
-justify-child(font-size = 16px)
+justify-child(font-size = 16px,$va = top)
   font-size font-size
   line-height normal
 
   display inline-block
 
-  vertical-align top
+  vertical-align $va
 
 
 

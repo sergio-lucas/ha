@@ -24,52 +24,53 @@ block content
         +b('section').features
           +b.feature-block--bg-feature1
             +e.item--bg-blue
-              +e('h2').title Настоящий <br> городок
+              +e('h2').title Настоящий городок
               +e.number — №1 —
               +e('p').descr Седона не атракцион для туристов, там течёт своя жизнь
           +b.feature-list
-            +e.item
-              +e('span').ico--home
+            +e.item--home
               +e('h2').title Жильё
-              +e('p').descr Рекомендуем пожить в настоящем мотеле, все как в кино!
-            +e.item
-              +e('span').ico--eat
+              +e('p').descr Рекомендуем пожить в&nbsp;настоящем мотеле, все как в&nbsp;кино!
+            +e.item--eat
               +e('h2').title Еда
-              +e('p').descr Всегда заказывай фирменный бургер, Вы не разочаруетесь!
-            +e.item
-              +e('span').ico--gift
+              +e('p').descr Всегда заказывай фирменный бургер, Вы&nbsp;не&nbsp;разочаруетесь!
+            +e.item--gift
               +e('h2').title Сувениры
-              +e('p').descr Не только китайского, но и местного производства!
+              +e('p').descr Не&nbsp;только китайского, но&nbsp;и&nbsp;местного производства!
           +b.feature-block--bg-feature2
             +e.item--right.--bg-blue
-              +e('h2').title Там есть <br> мост дьявола
+              +e('h2').title Там есть мост дьявола
               +e.number — №2 —
-              +e('p').descr Да, по нему можно пройти! Если конечно вы осмелитесь
+              +e('p').descr Да, по&nbsp;нему можно пройти! Если конечно вы&nbsp;осмелитесь
           +b.feature-list--gray
             +e.item
-              +e('h2').title Небольшая <br> площадь
+              +e('h2').title Небольшая площадь
               +e.number — №3 —
-              +e('p').descr Все достопримечательности находятся очень близко
+              +e('p').descr Все достопримеча&shy;тельности находятся очень близко
             +e.item
-              +e('h2').title Красивая <br> дорога
+              +e('h2').title Красивая дорога
               +e.number — №4 —
-              +e('p').descr Ехать в Седону из Лас-Вегаса совсем не скучно!
+              +e('p').descr Ехать в&nbsp;Седону из&nbsp;<span>Лас-Вегаса</span> совсем не&nbsp;скучно!
             +e.item
-              +e('h2').title Мало <br> туристов
+              +e('h2').title Мало туристов
               +e.number — №5 —
-              +e('p').descr Большинство едет в гранд каньон и толпится там
+              +e('p').descr Большинство едет в&nbsp;гранд каньон и&nbsp;толпится там
         +b('section').index-search
           +e('h2').title Заинтересовались?
-          +e('p').descr Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне
+          +e('p').descr Укажите предполагаемые даты поездки и&nbsp;мы&nbsp;покажем вам лучшие предложения гостиниц в&nbsp;седоне
           +b('form')(action="/" method="post").search-form
             +e('a').btn(href="#" class="js-toggleShow") Поиск гостиниц в Седоне
             +e.inner.js-show
               +e.date
                 label(for="dtarrival") Дата заезда:
-                input(class="date-arrival" id="dtarrival" type="date")
+                +e.input-wrap
+                  input(class="date-arrival" id="dtarrival" type="text")
+                  +e('span').ico-date
               +e.date
                 label(for="dtdep") Дата выезда:
-                input(class="date-dep" id="dtdep" type="date")
+                +e.input-wrap
+                  input(class="date-dep" id="dtdep" type="text")
+                  +e('span').ico-date
               +e.age
                 +e.left
                   label(for="adult") Взрослые:
@@ -77,7 +78,7 @@ block content
                     +e('button').btn--minus -
                     +e('input')(id="adult" type="text" placeholder="2").value
                     +e('button').btn--plus +
-                +e.right
+                +e.left--right
                   label(for="child") Дети:
                   +b.input-number
                     +e('button').btn--minus -
