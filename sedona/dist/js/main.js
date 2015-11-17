@@ -12,13 +12,14 @@
 })();
 var map,
     mapElement = document.getElementById('map');
-    function initMap() {
-      if (!!mapElement) {
-        map = new google.maps.Map(mapElement, {
-          center: {lat: 35.1811269, lng: -111.7480437},
-          scrollwheel: false,
-          zoom: 8,
-          mapTypeControl: false
-        });
-      }
-    }
+
+function initMap() {
+  if (!!mapElement) {
+    map = new google.maps.Map(mapElement, {
+      center: {lat: 35.1811269, lng: -111.7480437},
+      scrollwheel: false,
+      zoom: 8,
+      mapTypeControl: false
+    });
+  }
+}
