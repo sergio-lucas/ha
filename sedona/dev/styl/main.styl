@@ -421,12 +421,14 @@ h2
         padding 8px 12px
         border 2px solid transparent
         outline 1px solid transparent
-        background #f2f2f2
+        // background #f2f2f2
+        background #f2f2f2 98% 6px no-repeat;
+        background-image url(../img/icon-calendar.png)
         font-size 14px
         font-weight bold
         color #000
         box-sizing border-box
-        transition all $anim_duration
+        transition border $anim_duration
         &::-webkit-inner-spin-button,
         &::-webkit-calendar-picker-indicator,
         &::-webkit-clear-button {
@@ -434,31 +436,17 @@ h2
           -webkit-appearance: none;
         }
         &:hover {
-          background #ebebeb
+          background-color #ebebeb;
+          background-position 98% -33px
           +.search-form__ico-date {
                       background-position -277px -39px
                     }
         }
         &:focus {
           border-color #e5e5e5
-          background none
-          +.search-form__ico-date {
-                      background-position -277px -77px
-                    }
+          background-color transparent
+          background-position 98% -71px
         }
-      }
-    .search-form__ico-date {
-      position absolute
-      right 8px
-      top 50%
-      margin-top -12px
-      display inline-block
-      vertical-align middle
-      width 22px
-      height 22px
-      background url(../img/sprite.png) -277px 0px;
-      &:hover {
-        background-position -277px -39px
       }
     }
     .search-form__age label {
