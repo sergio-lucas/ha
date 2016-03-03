@@ -1,5 +1,6 @@
 (function(){
   var toggleShow = document.querySelector('.js-toggleShow'),
+      asd = document.getElementById('asd');
       toogleForm = document.querySelector('.js-show');
 
   if(!!toggleShow) {
