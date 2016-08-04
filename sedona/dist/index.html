@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="cleartype" content="on">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sedona main page</title>
     <meta name="description" content="Sedona main page description">
     <meta name="keywords" content="Sedona, html-slicing, psd, template, html academy">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="css/main.min.css" rel="stylesheet">
   </head>
   <body>
     <div class="container">
@@ -47,7 +47,7 @@
           <section class="features">
             <div class="feature-block feature-block--bg-feature1">
               <div class="feature-block__item feature-block__item--bg-blue">
-                <h2 class="feature-block__title">Настоящий <br> городок
+                <h2 class="feature-block__title">Настоящий городок
                 </h2>
                 <div class="feature-block__number">— №1 —
                 </div>
@@ -56,58 +56,58 @@
               </div>
             </div>
             <div class="feature-list">
-              <div class="feature-list__item"><span class="feature-list__ico feature-list__ico--home"></span>
+              <div class="feature-list__item feature-list__item--home">
                 <h2 class="feature-list__title">Жильё
                 </h2>
-                <p class="feature-list__descr">Рекомендуем пожить в настоящем мотеле, все как в кино!
+                <p class="feature-list__descr">Рекомендуем пожить в&nbsp;настоящем мотеле, все как в&nbsp;кино!
                 </p>
               </div>
-              <div class="feature-list__item"><span class="feature-list__ico feature-list__ico--eat"></span>
+              <div class="feature-list__item feature-list__item--eat">
                 <h2 class="feature-list__title">Еда
                 </h2>
-                <p class="feature-list__descr">Всегда заказывай фирменный бургер, Вы не разочаруетесь!
+                <p class="feature-list__descr">Всегда заказывай фирменный бургер, Вы&nbsp;не&nbsp;разочаруетесь!
                 </p>
               </div>
-              <div class="feature-list__item"><span class="feature-list__ico feature-list__ico--gift"></span>
+              <div class="feature-list__item feature-list__item--gift">
                 <h2 class="feature-list__title">Сувениры
                 </h2>
-                <p class="feature-list__descr">Не только китайского, но и местного производства!
+                <p class="feature-list__descr">Не&nbsp;только китайского, но&nbsp;и&nbsp;местного производства!
                 </p>
               </div>
             </div>
             <div class="feature-block feature-block--bg-feature2">
               <div class="feature-block__item feature-block__item--bg-blue feature-block__item--right">
-                <h2 class="feature-block__title">Там есть <br> мост дьявола
+                <h2 class="feature-block__title">Там есть мост дьявола
                 </h2>
                 <div class="feature-block__number">— №2 —
                 </div>
-                <p class="feature-block__descr">Да, по нему можно пройти! Если конечно вы осмелитесь
+                <p class="feature-block__descr">Да, по&nbsp;нему можно пройти! Если конечно вы&nbsp;осмелитесь
                 </p>
               </div>
             </div>
             <div class="feature-list feature-list--gray">
               <div class="feature-list__item">
-                <h2 class="feature-list__title">Небольшая <br> площадь
+                <h2 class="feature-list__title">Небольшая площадь
                 </h2>
                 <div class="feature-list__number">— №3 —
                 </div>
-                <p class="feature-list__descr">Все достопримечательности находятся очень близко
+                <p class="feature-list__descr">Все достопримеча&shy;тельности находятся очень близко
                 </p>
               </div>
               <div class="feature-list__item">
-                <h2 class="feature-list__title">Красивая <br> дорога
+                <h2 class="feature-list__title">Красивая дорога
                 </h2>
                 <div class="feature-list__number">— №4 —
                 </div>
-                <p class="feature-list__descr">Ехать в Седону из Лас-Вегаса совсем не скучно!
+                <p class="feature-list__descr">Ехать в&nbsp;Седону из&nbsp;<span>Лас-Вегаса</span> совсем не&nbsp;скучно!
                 </p>
               </div>
               <div class="feature-list__item">
-                <h2 class="feature-list__title">Мало <br> туристов
+                <h2 class="feature-list__title">Мало туристов
                 </h2>
                 <div class="feature-list__number">— №5 —
                 </div>
-                <p class="feature-list__descr">Большинство едет в гранд каньон и толпится там
+                <p class="feature-list__descr">Большинство едет в&nbsp;гранд каньон и&nbsp;толпится там
                 </p>
               </div>
             </div>
@@ -115,19 +115,21 @@
           <section class="index-search">
             <h2 class="index-search__title">Заинтересовались?
             </h2>
-            <p class="index-search__descr">Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне
+            <p class="index-search__descr">Укажите предполагаемые даты поездки и&nbsp;мы&nbsp;покажем вам лучшие предложения гостиниц в&nbsp;седоне
             </p>
-            <form action="/" method="post" class="search-form">
-              <button class="search-form__btn">Поиск гостиниц в Седоне
-              </button>
-              <div class="search-form__inner">
+            <form action="/" method="post" class="search-form"><a href="#" class="js-toggleShow search-form__btn">Поиск гостиниц в Седоне</a>
+              <div class="js-show search-form__inner">
                 <div class="search-form__date">
                   <label for="dtarrival">Дата заезда:</label>
-                  <input id="dtarrival" type="date" placeholder="24 Апреля 2014" class="date-arrival">
+                  <div class="search-form__input-wrap">
+                    <input id="dtarrival" type="text" class="date-arrival" placeholder="24 Апреля 2014">
+                  </div>
                 </div>
                 <div class="search-form__date">
                   <label for="dtdep">Дата выезда:</label>
-                  <input id="dtdep" type="date" placeholder="24 Июля 2014" class="date-dep">
+                  <div class="search-form__input-wrap">
+                    <input id="dtdep" type="text" class="date-dep" placeholder="4 июля 2014">
+                  </div>
                 </div>
                 <div class="search-form__age">
                   <div class="search-form__left">
@@ -140,7 +142,7 @@
                       </button>
                     </div>
                   </div>
-                  <div class="search-form__right">
+                  <div class="search-form__left search-form__left--right">
                     <label for="child">Дети:</label>
                     <div class="input-number">
                       <button class="input-number__btn input-number__btn--minus">-
@@ -155,7 +157,7 @@
               </div>
             </form>
           </section>
-          <div class="main__bg-map">
+          <div id="map" class="main__bg-map">
           </div>
         </article>
       </main>
@@ -173,6 +175,8 @@
           </div>
         </div>
       </footer>
+      <script src="js/main.min.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe1fzyKwmk-E2qM61BUCxZHoDJcviP8mE&amp;callback=initMap" async defer></script>
     </div>
   </body>
 </html>

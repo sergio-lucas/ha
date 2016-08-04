@@ -1,4 +1,12 @@
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-//- <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="js/slick.min.js"></script>
-script(href='js/main.js')
+script(src='js/main.min.js')
+//- script(type='text/javascript').
+//-     var map;
+//-     function initMap() {
+//-       map = new google.maps.Map(document.getElementById('map'), {
+//-         center: {lat: 35.1811269, lng: -111.7480437},
+//-         scrollwheel: false,
+//-         zoom: 8,
+//-         mapTypeControl: false
+//-       });
+//-     }
+script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe1fzyKwmk-E2qM61BUCxZHoDJcviP8mE&callback=initMap" async defer)

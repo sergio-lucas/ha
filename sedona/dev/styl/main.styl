@@ -81,11 +81,26 @@
 // variables//
 //
 @import 'mixins/_utilities.styl'
-$font__PtSans = 'PT Sans', sans-serif, Helvetica, Arial
+$font__PtSans = 'PT Sans', Helvetica, Arial, sans-serif
 $base__color = #000
+$anim_duration = .3s
 //normalize
 normalize-css()
 //common
+/*
+hotels
+*/
+@import 'fonts.styl';
+@font-face {
+  font-family: 'symbols-sedona';
+  src: url('../font/symbols-sedona.eot?60737633');
+  src: url('../font/symbols-sedona.eot?60737633#iefix') format('embedded-opentype'),
+       url('../font/symbols-sedona.woff?60737633') format('woff'),
+       url('../font/symbols-sedona.ttf?60737633') format('truetype'),
+       url('../font/symbols-sedona.svg?60737633#symbols-sedona') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 body
   font normal 14px/normal $font__PtSans
   color $base__color
@@ -102,16 +117,26 @@ h2
 .clearfix {
   clearfix()
 }
+.wrap {
+  padding 0 6%
+}
+
 .container {
   min-width 768px
   max-width 1200px
   margin: 0 auto;
+  background #fff
   box-shadow 0 5px 15px lighten(#000,80%)
+  box-sizing border-box
 }
   /*
   * Header
   */
-
+.main-header {
+  clearfix()
+  margin-bottom -15px
+  overflow hidden
+}
 .nav__list {
   // justify()
   height 55px
@@ -131,6 +156,23 @@ h2
   line-height: 55px;
   color $base__color
   text-decoration none
+  transition color $anim_duration
+  &:hover {
+    color #81b3d2
+  }
+  &:active {
+    color rgba(0,0,0,.3)
+  }
+}
+.nav__item--active .nav__link {
+  color #766357
+  &:hover {
+    color #604e43
+  }
+  &:active {
+    color #766357
+    opacity .3
+  }
 }
 .nav__link--logo {
   position relative
@@ -203,32 +245,43 @@ h2
 .feature-list {
   clearfix()
 }
-  .feature-list__ico {
+  .feature-list__item:before {
+    content ''
     display block
     margin 0 auto
-    width 75px
     height 75px
+    background url(../img/sprite.png) no-repeat
     background-repeat no-repeat
     background-position 50%
   }
-    .feature-list__ico--home {
-      background-image url(../img/icon/icon-features--1.png)
+    .feature-list__item--home:before {
+      background-position: 0 0;
+      width: 75px;
     }
-    .feature-list__ico--eat {
-      background-image url(../img/icon/icon-features--2.png)
+    .feature-list__item--eat:before {
+      background-position: -80px 0px;
+      width: 74px;
     }
-    .feature-list__ico--gift {
-      background-image url(../img/icon/icon-features--3.png)
+    .feature-list__item--gift:before {
+      background-position: 0 -77px;
+      width: 64px;
     }
+  .feature-list__title {
+    width 155px
+    margin 0.83em auto
+  }
   .feature-list__descr {
     font-size 14px
     color #333
+    span {
+      white-space nowrap
+    }
   }
 
 .feature-block__item {
   width 34%
   height 100%
-  padding-top 50px
+  padding 50px 5% 40px 5%
   text-align center
   box-sizing border-box
 }
@@ -250,7 +303,8 @@ h2
   color #fff
 }
 .feature-block__title {
-  margin-top 0
+  max-width 200px
+  margin 0 auto
   margin-bottom 25px
   font-size 21px
   font-weight bold
@@ -263,7 +317,7 @@ h2
   line-height 21px
 }
 .feature-block {
-  height: 256px;
+  clearfix()
   position: relative;
   background-repeat no-repeat
 }
@@ -278,6 +332,16 @@ h2
 
 .feature-list--gray {
   background #eee
+  .feature-list__item {
+    padding-top 30px
+    padding-bottom 50px
+    &:before {
+      display none
+    }
+  }
+  .feature-list__number {
+    margin-bottom: 25px;
+}
 }
 
 .index-search {
@@ -313,9 +377,12 @@ h2
   font-weight bold
   line-height 26px
   text-transform uppercase
+  text-decoration none
+  text-align center
 }
   .search-form__inner {
-    // display none
+      visibility hidden
+      opacity 0
       position absolute
       top 100%
       width 100%
@@ -324,34 +391,69 @@ h2
       box-sizing border-box
       box-shadow 0 7px 15px lighten(#000,80%)
       z-index 2
+      transition opacity .5s
+  }
+  .search-form__inner.show {
+    visibility visible
+    opacity 1
   }
   .search-form__date {
     margin-bottom 30px
   }
     .search-form__date label {
       display inline-block
+      vertical-align middle
       min-width 111px
       font-size 14px
       line-height 26px
       font-weight bold
       box-sizing border-box
     }
+    .search-form__input-wrap {
+      position relative
+      display inline-block
+      vertical-align middle
+      width 350px
+      overflow-x hidden
+    }
       .search-form__date input {
-        display inline-block
-        width 347px
+        width 100%
         padding 8px 12px
-        border 1px solid transparent
-        background #f2f2f2
+        border 2px solid transparent
+        outline 1px solid transparent
+        // background #f2f2f2
+        background #f2f2f2 98% 6px no-repeat;
+        background-image url(../img/icon-calendar.png)
         font-size 14px
         font-weight bold
         color #000
         box-sizing border-box
+        transition border $anim_duration
+        &::-webkit-inner-spin-button,
+        &::-webkit-calendar-picker-indicator,
+        &::-webkit-clear-button {
+          display: none;
+          -webkit-appearance: none;
+        }
+        &:hover {
+          background-color #ebebeb;
+          background-position 98% -33px
+          +.search-form__ico-date {
+                      background-position -277px -39px
+                    }
+        }
+        &:focus {
+          border-color #e5e5e5
+          background-color transparent
+          background-position 98% -71px
+        }
       }
+    }
     .search-form__age label {
-      float left
       font-size 14px
       line-height 26px
       font-weight bold
+      justify-child(14px,middle)
     }
   .search-form__age {
     clearfix()
@@ -361,16 +463,17 @@ h2
     clearfix()
     width 230px
     float left
+    justify()
   }
-  .search-form__right {
+  .search-form__left--right {
     width 180px
     float right
   }
 
   .input-number {
     position relative
-    float right
     width 114px
+    justify-child(16px,middle)
   }
   .input-number__btn {
   position absolute
@@ -388,13 +491,25 @@ h2
       color #000
       placeholder-color(#000)
     }
+    .input-number__value:focus {
+      outline: 1px solid transparent;
+    }
     .input-number__btn {
       padding 8px 12px
       border 1px solid transparent
+      outline 1px solid transparent
       background #f2f2f2
-      font-size 14px
+      font-size 18px
+      line-height 18px
       font-weight bold
       color #a9a9a9
+      transition color $anim_duration
+      &:hover {
+        color #000
+      }
+      &:active {
+        color #81b3d2
+      }
     }
    .input-number__btn--minus {
     left 0
@@ -411,9 +526,18 @@ h2
   font-weight bold
   line-height 26px
   border 1px solid transparent
+  outline 1px solid transparent
   text-transform uppercase
   background #81b3d2
   color #fff
+  transition all $anim_duration
+  &:hover {
+    background #669ec0
+  }
+  &:active {
+    background #5496bd
+    color rgba(255,255,255,.3)
+  }
 }
 
 .main__bg-map {
@@ -424,6 +548,11 @@ h2
   background: url(../img/bg-map.jpg) 0 100% no-repeat;
   z-index: 1;
 }
+// #map { height: 100%; }
+/*
+hotels
+*/
+@import 'hotels.styl';
 /*
 * Footer block
 */
@@ -432,11 +561,13 @@ h2
   position: relative;
   background-color: rgba(255,255,255,.9);
   z-index: 10;
-  padding: 36px;
+  padding: 36px 0;
 }
 
 .main-footer__item {
-  float left
+  display inline-block
+  margin-right -4px
+  vertical-align middle
   width (100/3)%
   text-align center
   box-sizing border-box
@@ -446,31 +577,59 @@ h2
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
-  padding-top: 10px;
   text-decoration none
   color #000
 }
 .social-block {
   nolist()
+  margin-right -4px
 }
 .social-block__btn {
+  position relative
   display inline-block
   vertical-align: top;
   font-size 0
-  background: #81b3d2 url(../img/sedona-sprite.png) no-repeat -381px -86px;
+  background: #81b3d2;
   width: 46px;
   height: 48px;
   margin-right: 5px;
-}
-  .social-block__btn:hover {
-    background-color: #669ec0;
+  transition background $anim_duration
+  &:hover {
+    background-color #669ec0
   }
-.social-block__btn--fb {
-  background-position: -414px -85px;
+  &:active {
+    background #5496bd
+    &:before {
+      opacity .3
+    }
+  }
+  &:before {
+    content: ''
+    position absolute
+    display inline-block
+    vertical-align middle
+    top 50%
+    margin-top -8px
+    left 50%
+    margin-left -10px
+    width 20px
+    height 16px
+    background: url(../img/sprite.png) no-repeat;
+  }
 }
-.social-block__btn--yt {
-    background-position: -451px -86px;
-}
+  .social-block__btn--tw:before {
+    background-position: 2px -161px;
+  }
+  .social-block__btn--fb:before {
+    width 10px
+    height 20px
+    margin-left -5px
+    margin-top -10px
+    background-position: -56px -158px;
+  }
+  .social-block__btn--yt:before {
+      background-position: -103px -161px;
+  }
 
 .copyright-block__create_link {
   display inline-block
@@ -479,8 +638,37 @@ h2
   margin-left 15px
   width: 113px;
   height: 39px;
-  background: url(../img/htmlacademy.png) no-repeat;
+  background: url(../img/sprite.png) no-repeat;
+  background-position -159px -88px
+  &:hover {
+    background-position -159px -44px
+  }
+  &:active {
+    background-position -159px 0px
+  }
 }
 .copyright-block__create-by {
-  font-weight bold
+  font-weight 400
+}
+@media screen and (max-width:965px) {
+  .feature-block__item {
+    padding-left 2%
+    padding-right 2%
+  }
+  .feature-list__item {
+    padding-left 40px
+    padding-right 40px
+  }
+  .options-block {
+     width (100/3) %
+  }
+  .hotel-filter .price-night {
+    width (100/3) %
+  }
+  .price-night__toggle--end {
+    left 70%
+  }
+  .hotel-item__rating {
+    width 135px
+  }
 }

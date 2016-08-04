@@ -1,0 +1,90 @@
+.hotel-filter {
+  padding: 0 6%;
+  border-bottom: 1px solid transparent;
+  background: url("../img/bg-filter.jpg") 0 0 no-repeat;
+}
+.options-block {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 252px;
+}
+.options-block__item {
+  margin-bottom: 23px;
+}
+.options-block__title {
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: #fff;
+}
+.options-block__check {
+  display: none;
+}
+.options-block__label {
+  position: relative;
+  padding-left: 40px;
+  font-size: 14px;
+  color: #fff;
+}
+.options-block__label:before {
+  position: absolute;
+  left: 0;
+  top: -12px;
+  content: '\2610';
+  font-size: 26px;
+  border-radius: 4px;
+}
+.options-block__check:checked + .options-block__label:before {
+  content: '\2611';
+}
+.hotel-filter .price-night {
+  float: right;
+  width: 328px;
+}
+.price-night__title {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #fff;
+}
+.price-night__start,
+.price-night__end {
+  position: relative;
+  width: 160px;
+  display: inline-block;
+}
+.price-night__start input,
+.price-night__end input {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+}
+:.price-night__start inputplaceholder,
+:.price-night__end inputplaceholder {
+  color: #fff;
+}
+.price-night__start input {
+  position: relative;
+  border-right: none;
+}
+.price-night__start:after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  bottom: 7px;
+  right: 0;
+  width: 2px;
+  background: #fff;
+}
+.price-night__end {
+  margin-left: -5px;
+}
+.price-night__end input {
+  padding-left: 10px;
+  border-left: none;
+}

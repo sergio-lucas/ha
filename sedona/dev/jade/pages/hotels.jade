@@ -15,106 +15,108 @@ block content
       +e('form')(method="post" action="/").parameters
         +b('ul').options-block
           +e('li')
+
             +e('h2').title Инфраструктура:
-          +e('li')
-            input(type="checkbox" id="pool" name="pool" checked)
-            label(for="pool") Бассейн
-          +e('li')
-            input(type="checkbox" id="parking" name="parking" checked)
-            label(for="parking") Парковка
-          +e('li')
-            input(type="checkbox" id="wifi" name="wifi" checked)
-            label(for="wifi") Wi-Fi
+          +e('li').item
+            +e('input')(type="checkbox" id="pool" name="pool" checked).check
+            +e('label').label(for="pool") Бассейн
+          +e('li').item
+            +e('input')(type="checkbox" id="parking" name="parking" disabled).check
+            +e('label').label(for="parking") Парковка
+          +e('li').item
+            +e('input')(type="checkbox" id="wifi" name="wifi").check
+            +e('label').label(for="wifi") Wi-Fi
         +b('ul').options-block
-          +e('li')
+          +e('li').item
             +e('h2').title Тип жилья:
-          +e('li')
-            input(type="checkbox" id="hotel" name="hotel" checked)
-            label(for="hotel") Гостиница
-          +e('li')
-            input(type="checkbox" id="motel" name="motel" checked)
-            label(for="motel") Мотель
-          +e('li')
-            input(type="checkbox" id="apart" name="apart" checked)
-            label(for="apart") Апартаменты
+          +e('li').item
+            +e('input')(type="checkbox" id="hotel" name="hotel" checked).check
+            +e('label').label(for="hotel") Гостиница
+          +e('li').item
+            +e('input')(type="checkbox" id="motel" name="motel" checked).check
+            +e('label').label(for="motel") Мотель
+          +e('li').item
+            +e('input')(type="checkbox" id="apart" name="apart" checked).check
+            +e('label').label(for="apart") Апартаменты
         +b.price-night
           +e('h2').title Стоимость в сутки (р):
           +e.from-to
-            +e.start от
-              span(id="start-value") 0
-            +e.end до
-              span(id="end-value") 3000
+            +e.start
+              input(id="start-value")(placeholder="от 0")
+            +e.end
+              input(id="end-value")(placeholder="до 3000")
           +e.range
-            +e.range-bar
+            +e.scale
+              +e.range-bar
             each val in ['--start', '--end']
-              +e('a')(class="range-slide "+val)= val
-      +b.middle-filter
-        +e.found Найдено:
-          span#total-count 3
-        +b('ul').sort-filter
-          +e('li').item Сортировка:
-          +e('li').item--active
-            a(href='#') по цене
-          +e('li').item
-            a(href='#') по типу
-          +e('li').item
-            a(href='#') по рейтингу
-        +e('ul').order
-          li
-            a(href='#') desc
-          li
-            a(href='#') asc
-      +b.filter-output
-        +b.hotel-item
-          +e.img
-            img(src='img/amara-resort&spa.jpg' alt='hotelName')
-          +e.descr
-            +e('a')(href='#').title Amara Resort & Spa
-            +e.type Гостиница
-            +e.price от 3500 р.
-            +e('ul').btn-block
-              +e('li')
-                +e('a')(href='#').btn--bg-blue Подробнее
-              +e('li')
-                +e('a')(href='#').btn--bg-broun Забронировать
-          +e.rating
-            +e.rating-stars--four
-            +e.mark Рейтинг:
-              span#mark-val 8,5
-
-        +b.hotel-item
-          +e.img
-            img(src='img/desert-quail-inn.jpg' alt='hotelName')
-          +e.descr
-            +e('a')(href='#').title Desert Quail Inn
-            +e.type Мотель
-            +e.price от 2000 р.
-            +e('ul').btn-block
-              +e('li')
-                +e('a')(href='#').btn--bg-blue Подробнее
-              +e('li')
-                +e('a')(href='#').btn--bg-broun Забронировать
-          +e.rating
-            +e.rating-stars--two
-            +e.mark Рейтинг:
-              span#mark-val 8,9
-
-        +b.hotel-item
-          +e.img
-            img(src='img/villas-at-poco-diablo.jpg' alt='hotelName')
-          +e.descr
-            +e('a')(href='#').title Villas at Poco Diablo
-            +e.type Апартаменты
-            +e.price от 4000 р.
-            +e('ul').btn-block
-              +e('li')
-                +e('a')(href='#').btn--bg-blue Подробнее
-              +e('li')
-                +e('a')(href='#').btn--bg-broun Забронировать
-          +e.rating
-            +e.rating-stars--three
-            +e.mark Рейтинг:
-              span#mark-val 9,2
-
+              +e('button')(class="toggle "+val)= val
+          +e.btn-wrap
+            +e('button').show-btn Показать
+              +e('span').btn-bg
+    +b.middle-filter
+      +e.found Найдено:
+        span#total-count 3
+      +e('ul').sort
+        +e('li').sort-item--sort Сортировка:
+        +e('li').sort-item--active
+          a(href='#') по цене
+        +e('li').sort-item
+          a(href='#') по типу
+        +e('li').sort-item
+          a(href='#') по рейтингу
+      +e('ul').order
+        +e('li').sort-btns--active
+          +e('button').sort-btn--up(value = ' desc')
+        +e('li').sort-bnts
+          +e('button').sort-btn--down(value = 'asc')
+    +b.filter-output
+      +b.hotel-item
+        +e.img-wrap
+          +e('img').img(src='img/amara-resort&spa.jpg' alt='hotelName' width='135' height='90')
+        +e.descr
+          +e('a')(href='#').title Amara Resort & Spa
+          +e.pricetype
+            +e('span').type Гостиница
+            +e('span').price от 3500 р.
+          +e('ul').btn-block
+            +e('li')
+              +e('a')(href='#').btn--bg-blue Подробнее
+            +e('li')
+              +e('a')(href='#').btn--bg-broun Забронировать
+        +e.rating
+          +e.rating-stars--four
+          +e.mark Рейтинг: 8,5
+      +b.hotel-item
+        +e.img-wrap
+          +e('img').img(src='img/desert-quail-inn.jpg' alt='hotelName' width='135' height='90')
+        +e.descr
+          +e('a')(href='#').title Desert Quail Inn
+          +e.pricetype
+            +e('span').type Мотель
+            +e('span').price от 2000 р.
+          +e('ul').btn-block
+            +e('li')
+              +e('a')(href='#').btn--bg-blue Подробнее
+            +e('li')
+              +e('a')(href='#').btn--bg-broun Забронировать
+        +e.rating
+          +e.rating-stars--two
+          +e.mark Рейтинг: 8,9
+      +b.hotel-item
+        +e.img-wrap
+          +e('img').img(src='img/villas-at-poco-diablo.jpg' alt='hotelName' width='135' height='90')
+        +e.descr
+          +e('a')(href='#').title Villas at Poco Diablo
+          +e.pricetype
+            +e('span').type Апартаменты
+            +e('span').price от 4000 р.
+          +e('ul').btn-block
+            +e('li')
+              +e('a')(href='#').btn--bg-blue Подробнее
+            +e('li')
+              +e('a')(href='#').btn--bg-broun Забронировать
+        +e.rating
+          +e.rating-stars--three
+          +e.mark Рейтинг: 9,2
 
 
